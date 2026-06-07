@@ -1,0 +1,162 @@
+[
+  {
+    "id": "sam",
+    "name": "Severe Acute Malnutrition (SAM)",
+    "nameShort": "SAM",
+    "category": "nutrition",
+    "criteria": [
+      "MUAC < 115mm (children 6–59 months)",
+      "WHZ < –3 SD",
+      "Bilateral pitting edema (any degree)"
+    ],
+    "symptoms": ["edema", "wasting", "weakness", "poor appetite", "hair changes"],
+    "steps": [
+      "Admit to inpatient care (TFC/SC) if: no appetite, medical complications, edema grade 3",
+      "Outpatient care (OTP) if: good appetite, no complications",
+      "RUTF: 92g/kg/day in 5 portions",
+      "Amoxicillin 25mg/kg twice daily × 7 days (routine)",
+      "Vitamin A: day 1, 2, 14",
+      "Folic acid 5mg on day 1",
+      "Check for malaria/TB/HIV",
+      "Monitor weight gain weekly"
+    ],
+    "drugs": ["amoxicillin", "vitamin-a"],
+    "referral": true,
+    "warning": "SAM with complications is a medical emergency — refer urgently.",
+    "references": ["WHO IMCI", "MSF Protocol 2024"]
+  },
+  {
+    "id": "mam",
+    "name": "Moderate Acute Malnutrition (MAM)",
+    "nameShort": "MAM",
+    "category": "nutrition",
+    "criteria": [
+      "MUAC 115–124mm",
+      "WHZ –3 to –2 SD",
+      "No bilateral pitting edema"
+    ],
+    "symptoms": ["mild wasting", "poor growth", "poor appetite"],
+    "steps": [
+      "Enroll in Supplementary Feeding Programme (SFP)",
+      "Provide supplementary food (CSB++ or Plumpy'Sup) 75g/kg/day",
+      "Screen for and treat underlying infections",
+      "Nutrition education for caregiver",
+      "Measure MUAC weekly",
+      "Discharge when MUAC ≥ 125mm for 2 consecutive visits"
+    ],
+    "drugs": [],
+    "referral": false,
+    "warning": "Refer to SAM management if MUAC drops below 115mm or edema develops.",
+    "references": ["WHO CMAM Guidelines"]
+  },
+  {
+    "id": "malaria-uncomplicated",
+    "name": "Uncomplicated Malaria",
+    "nameShort": "Malaria",
+    "category": "infectious",
+    "criteria": [
+      "Positive RDT or blood smear for Plasmodium",
+      "Fever (> 37.5°C) or history of fever",
+      "No danger signs"
+    ],
+    "symptoms": ["fever", "chills", "headache", "myalgia", "nausea", "vomiting"],
+    "steps": [
+      "Confirm with RDT before treating",
+      "AL (Coartem): 6-dose regimen over 3 days with food",
+      "Paracetamol for fever",
+      "Ensure adequate hydration",
+      "Advise to return if: not improving in 24h, vomiting, unable to take oral meds",
+      "Follow up in 3 days"
+    ],
+    "drugs": ["al"],
+    "dangerSigns": [
+      "Altered consciousness",
+      "Repeated vomiting",
+      "Respiratory distress",
+      "Prostration",
+      "Convulsions"
+    ],
+    "referral": false,
+    "warning": "Any danger sign = severe malaria → parenteral artesunate + urgent referral.",
+    "references": ["WHO Malaria Treatment Guidelines 2023"]
+  },
+  {
+    "id": "diarrhea-awd",
+    "name": "Acute Watery Diarrhea / Cholera",
+    "nameShort": "AWD/Cholera",
+    "category": "infectious",
+    "criteria": [
+      "≥ 3 loose stools in 24h",
+      "No blood in stool (if blood → dysentery)",
+      "May have vomiting, dehydration"
+    ],
+    "symptoms": ["diarrhea", "vomiting", "dehydration", "rice-water stools", "weakness"],
+    "steps": [
+      "Assess dehydration: none / some / severe",
+      "Plan A (no dehydration): ORS 50–100ml/loose stool, zinc 10/20mg × 10 days",
+      "Plan B (some dehydration): ORS 75ml/kg over 4h in facility, then Plan A",
+      "Plan C (severe dehydration): Ringer's lactate 100ml/kg IV — refer urgently",
+      "Cholera suspected (cholera zone + severe dehydration): Ciprofloxacin 1g single dose (adult)",
+      "Continue breastfeeding; encourage feeding",
+      "Monitor urine output"
+    ],
+    "drugs": ["ors", "zinc", "ciprofloxacin"],
+    "referral": false,
+    "warning": "Severe dehydration, shock, or altered consciousness → immediate IV fluids + referral.",
+    "references": ["WHO IMCI", "WHO Cholera Guidelines"]
+  },
+  {
+    "id": "ari-pneumonia",
+    "name": "Acute Respiratory Infection (ARI) / Pneumonia",
+    "nameShort": "ARI/Pneumonia",
+    "category": "infectious",
+    "criteria": [
+      "Cough or difficulty breathing",
+      "Fast breathing: ≥ 60/min (< 2mo), ≥ 50/min (2–11mo), ≥ 40/min (1–5yr)",
+      "Chest indrawing (severe)"
+    ],
+    "symptoms": ["cough", "fast breathing", "fever", "chest indrawing", "wheeze", "nasal flaring"],
+    "steps": [
+      "Count respiratory rate for 60 seconds",
+      "Non-severe pneumonia (fast breathing, no chest indrawing): Amoxicillin 25mg/kg twice daily × 5 days",
+      "Severe pneumonia (chest indrawing): Amoxicillin high-dose 40mg/kg twice daily + refer",
+      "Very severe / danger signs: Ampicillin + gentamicin IV + urgent referral",
+      "Paracetamol for fever > 38.5°C",
+      "Ensure adequate hydration",
+      "No antibiotics for viral URTI (cough < 2 weeks, no fast breathing)"
+    ],
+    "drugs": ["amoxicillin", "ceftriaxone"],
+    "dangerSigns": [
+      "Cyanosis",
+      "Grunting",
+      "Unable to breastfeed / drink",
+      "Convulsions",
+      "Unconscious"
+    ],
+    "referral": false,
+    "warning": "Any danger sign → very severe disease → urgent referral + IV antibiotics.",
+    "references": ["WHO IMCI 2024", "MSF Clinical Guidelines"]
+  },
+  {
+    "id": "dysentery",
+    "name": "Dysentery (Bloody Diarrhea)",
+    "nameShort": "Dysentery",
+    "category": "infectious",
+    "criteria": [
+      "Diarrhea with blood",
+      "May have fever, abdominal cramps, tenesmus"
+    ],
+    "symptoms": ["bloody diarrhea", "fever", "abdominal pain", "tenesmus", "dehydration"],
+    "steps": [
+      "Assess and treat dehydration (ORS)",
+      "Treat for Shigella: Ciprofloxacin 500mg twice daily × 3 days (adult); Ceftriaxone 50mg/kg once daily × 5 days (child)",
+      "Treat for amoebic dysentery if not responding: Metronidazole 30–50mg/kg/day in 3 doses × 5 days",
+      "Do NOT use anti-motility drugs (loperamide)",
+      "Zinc for children < 5 years"
+    ],
+    "drugs": ["ciprofloxacin", "metronidazole", "ceftriaxone", "ors", "zinc"],
+    "referral": false,
+    "warning": "Severe dehydration or signs of HUS (pallor, oliguria) → urgent referral.",
+    "references": ["WHO IMCI", "MSF Clinical Guidelines"]
+  }
+]
