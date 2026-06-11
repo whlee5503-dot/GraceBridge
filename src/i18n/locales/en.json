@@ -339,5 +339,31 @@
       "highRiskCondition": "High-risk condition detected — referral strongly recommended",
       "newScreening": "New Screening"
     }
+  },
+  "onboarding": {
+    "s1": {
+      "title": "Welcome to GraceBridge",
+      "desc": "Empowering church volunteers to screen vulnerable community members for health risks and connect them to nearby care."
+    },
+    "s2": {
+      "title": "Three Screening Tools",
+      "desc": "PHQ-9 for depression, MNA-SF for nutrition, and a chronic conditions checklist — all based on validated clinical standards."
+    },
+    "s3": {
+      "title": "Privacy by Design",
+      "desc": "No names, ages, or contact information are ever collected. Only anonymous scores are stored to protect those you serve."
+    },
+    "consent": "I understand this tool is for volunteer screening only, not a medical diagnosis. No personal identifying information will be collected.",
+    "agree": "I Agree & Continue",
+    "next": "Next",
+    "skip": "Skip"
+  },
+  "auth": {
+    "subtitle": "Bridging Faith and Health",
+    "title": "Enter Church Code",
+    "desc": "Enter the 6-digit code provided by your church coordinator.",
+    "error": "Please enter a valid 6-digit code.",
+    "confirm": "Confirm",
+    "privacy": "No personal information is collected. Only anonymous screening data is stored."
   }
 }
