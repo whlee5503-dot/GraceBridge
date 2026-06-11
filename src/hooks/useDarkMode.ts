@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const STORAGE_KEY = 'epiaid-dark-mode';
+const STORAGE_KEY = 'gracebridge-dark-mode';
 
 export function useDarkMode() {
   const [isDark, setIsDark] = useState(() => {

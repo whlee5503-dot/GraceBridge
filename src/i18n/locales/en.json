@@ -258,6 +258,86 @@
     "loading": "Loading…",
     "error": "An error occurred",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "next": "Next"
+  },
+  "screening": {
+    "step": "Step",
+    "calculate": "Calculate Results",
+    "consent": {
+      "title": "Health Screening",
+      "body": "This screening uses validated clinical tools (PHQ-9, MNA-SF) to identify health risks. No personal information is collected.",
+      "point1": "Anonymous — no name, age, or contact stored",
+      "point2": "Results stay on this device until synced",
+      "point3": "Volunteer use only — not a medical diagnosis",
+      "start": "Begin Screening"
+    },
+    "phq9": {
+      "title": "Depression Screening (PHQ-9)",
+      "instruction": "Over the last 2 weeks, how often have you been bothered by the following?",
+      "opt0": "Not at all",
+      "opt1": "Several days",
+      "opt2": "More than half the days",
+      "opt3": "Nearly every day",
+      "q1": "Little interest or pleasure in doing things",
+      "q2": "Feeling down, depressed, or hopeless",
+      "q3": "Trouble falling or staying asleep, or sleeping too much",
+      "q4": "Feeling tired or having little energy",
+      "q5": "Poor appetite or overeating",
+      "q6": "Feeling bad about yourself — or that you are a failure",
+      "q7": "Trouble concentrating on things",
+      "q8": "Moving or speaking slowly / being restless or fidgety",
+      "q9": "Thoughts that you would be better off dead or of hurting yourself"
+    },
+    "mnasf": {
+      "title": "Nutrition Screening (MNA-SF)",
+      "q1": "Has food intake declined over the past 3 months?",
+      "q1_0": "Severe decrease",
+      "q1_1": "Moderate decrease",
+      "q1_2": "No decrease",
+      "q2": "Weight loss during the last 3 months?",
+      "q2_0": "More than 3 kg",
+      "q2_1": "Does not know",
+      "q2_2": "1 to 3 kg",
+      "q2_3": "No weight loss",
+      "q3": "Mobility",
+      "q3_0": "Bed or chair bound",
+      "q3_1": "Able to get out of bed/chair, but does not go out",
+      "q3_2": "Goes out",
+      "q4": "Psychological stress or acute disease in the past 3 months?",
+      "q4_0": "Yes",
+      "q4_2": "No",
+      "q5": "Neuropsychological problems",
+      "q5_0": "Severe dementia or depression",
+      "q5_1": "Mild dementia",
+      "q5_2": "No psychological problems",
+      "q6": "BMI or calf circumference",
+      "q6_0": "BMI < 19 or CC < 31 cm",
+      "q6_1": "BMI 19 to 21",
+      "q6_2": "BMI 21 to 23",
+      "q6_3": "BMI ≥ 23 or CC ≥ 31 cm"
+    },
+    "chronic": {
+      "title": "Chronic Conditions",
+      "instruction": "Select all that apply",
+      "hypertension": "High blood pressure (Hypertension)",
+      "diabetes": "Diabetes",
+      "heartDisease": "Heart disease",
+      "stroke": "Stroke",
+      "copd": "Chronic lung disease (COPD)",
+      "cancer": "Cancer",
+      "kidneyDisease": "Chronic kidney disease",
+      "other": "Other chronic condition"
+    },
+    "result": {
+      "title": "Screening Results",
+      "combined": "Overall Risk Level",
+      "phq9": "Depression (PHQ-9)",
+      "mnasf": "Nutrition (MNA-SF)",
+      "chronic": "Chronic Conditions",
+      "conditions": "condition(s)",
+      "highRiskCondition": "High-risk condition detected — referral strongly recommended",
+      "newScreening": "New Screening"
+    }
   }
 }

@@ -6,6 +6,7 @@ import Layout from './components/layout/Layout'
 const Home            = lazy(() => import('./pages/Home'))
 const DiagnosticCheck = lazy(() => import('./pages/DiagnosticCheck'))
 const NutritionAssess = lazy(() => import('./pages/NutritionAssess'))
+const ScreeningForm = lazy(() => import('./components/ScreeningForm'))
 const PatientLog      = lazy(() => import('./pages/PatientLog'))
 
 function PageLoader() {
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/"         element={<Suspense fallback={<PageLoader />}><Home            /></Suspense>} />
             <Route path="/diagnose" element={<Suspense fallback={<PageLoader />}><DiagnosticCheck /></Suspense>} />
             <Route path="/nutrition"element={<Suspense fallback={<PageLoader />}><NutritionAssess /></Suspense>} />
+            <Route path="/screening" element={<Suspense fallback={<PageLoader />}><ScreeningForm /></Suspense>} />
             <Route path="/patients" element={<Suspense fallback={<PageLoader />}><PatientLog      /></Suspense>} />
           </Route>
         </Routes>
