@@ -11,6 +11,9 @@ import type {
   PHQ9Answers, MNASFAnswers, ChronicConditions, ScoreResult, RiskLevel,
 } from '../lib/scoring'
 import { useAutosaveDraft, loadDraft, clearDraft } from '../hooks/useScreeningDraft'
+import { saveScreeningResult } from '../lib/supabase'
+import { getSessionId } from '../lib/privacy'
+import { getStoredChurchCode } from './ChurchAuth'
 
 // ── 타입 ───────────────────────────────────────────────────────────
 type Step = 'consent' | 'phq9' | 'mnasf' | 'chronic' | 'result'
@@ -158,8 +161,8 @@ export default function ScreeningForm() {
   const phq9Complete  = phq9Ans.every(v => v >= 0)
   const mnaSFComplete = MNASF_QUESTIONS.every(q => mnaSFAns[q.key] !== undefined)
 
-  // ── 결과 계산 ─────────────────────────────────────────────────
-  function handleCalculate() {
+  // ── 결과 계산 + Supabase 저장 ───────────────────────────────────
+  async function handleCalculate() {
     const phq9Result    = scorePHQ9(phq9Ans as PHQ9Answers)
     const mnaSFResult   = scoreMNASF(mnaSFAns as MNASFAnswers)
     const chronicResult = scoreChronicConditions(chronic)
@@ -167,6 +170,18 @@ export default function ScreeningForm() {
     setResult({ phq9: phq9Result, mnasf: mnaSFResult, chronic: chronicResult, combined })
     clearDraft().catch(() => {})
     setStep('result')
+
+    // 익명 결과 Supabase 저장 (실패해도 UX 차단 안 함)
+    saveScreeningResult({
+      session_id:    getSessionId(),
+      church_code:   getStoredChurchCode() ?? 'unknown',
+      region_code:   'KR',
+      phq9_score:    phq9Result.score,
+      mnasf_score:   mnaSFResult.score,
+      chronic_count: chronicResult.count,
+      has_high_risk: chronicResult.hasHighRisk,
+      risk_level:    combined,
+    }).catch(console.error)
   }
 
   // ── 리셋 ─────────────────────────────────────────────────────
