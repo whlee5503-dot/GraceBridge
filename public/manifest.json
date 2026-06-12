@@ -1,6 +1,6 @@
 {
-  "name": "EpiAid — Field Medical Aid",
-  "short_name": "EpiAid",
+  "name": "GraceBridge — Bridging Faith and Health",
+  "short_name": "GraceBridge",
   "description": "Offline-capable field medical aid tool for epidemic response workers",
   "start_url": "/",
   "display": "standalone",
