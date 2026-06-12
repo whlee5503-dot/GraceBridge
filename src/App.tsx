@@ -10,6 +10,7 @@ const Home            = lazy(() => import('./pages/Home'))
 const DiagnosticCheck = lazy(() => import('./pages/DiagnosticCheck'))
 const NutritionAssess = lazy(() => import('./pages/NutritionAssess'))
 const ScreeningForm   = lazy(() => import('./components/ScreeningForm'))
+const VolunteerDashboard = lazy(() => import('./pages/VolunteerDashboard'))
 const PatientLog      = lazy(() => import('./pages/PatientLog'))
 
 function PageLoader() {
@@ -63,7 +64,8 @@ export default function App() {
               <Route path="/screening" element={<Suspense fallback={<PageLoader />}><ScreeningForm   /></Suspense>} />
               <Route path="/diagnose"  element={<Suspense fallback={<PageLoader />}><DiagnosticCheck /></Suspense>} />
               <Route path="/nutrition" element={<Suspense fallback={<PageLoader />}><NutritionAssess /></Suspense>} />
-              <Route path="/patients"  element={<Suspense fallback={<PageLoader />}><PatientLog      /></Suspense>} />
+              <Route path="/dashboard" element={<Suspense fallback={<PageLoader />}><VolunteerDashboard /></Suspense>} />
+            <Route path="/patients"  element={<Suspense fallback={<PageLoader />}><PatientLog      /></Suspense>} />
             </Route>
           </Routes>
         </BrowserRouter>

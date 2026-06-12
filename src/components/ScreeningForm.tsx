@@ -12,6 +12,7 @@ import type {
 } from '../lib/scoring'
 import { useAutosaveDraft, loadDraft, clearDraft } from '../hooks/useScreeningDraft'
 import { saveScreeningResult } from '../lib/supabase'
+import { enqueue } from '../lib/offlineQueue'
 import { getSessionId } from '../lib/privacy'
 import { getStoredChurchCode } from './ChurchAuth'
 
@@ -170,6 +171,17 @@ export default function ScreeningForm() {
     setResult({ phq9: phq9Result, mnasf: mnaSFResult, chronic: chronicResult, combined })
     clearDraft().catch(() => {})
     setStep('result')
+
+    // IndexedDB 오프라인 큐에 저장
+    enqueue({
+      sessionId:         getSessionId(),
+      churchCode:        getStoredChurchCode() ?? 'unknown',
+      regionCode:        'KR',
+      phq9Score:         phq9Result.score,
+      mnaSfScore:        mnaSFResult.score,
+      chronicConditions: chronic as Record<string, boolean>,
+      riskLevel:         combined,
+    }).catch(console.error)
 
     // 익명 결과 Supabase 저장 (실패해도 UX 차단 안 함)
     saveScreeningResult({

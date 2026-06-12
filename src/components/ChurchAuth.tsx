@@ -55,7 +55,7 @@ export default function ChurchAuth({ onSuccess }: ChurchAuthProps) {
           className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
           style={{ backgroundColor: '#2D6A4F20' }}
         >
-          <span className="text-3xl">��</span>
+          <span style={{ fontSize: '32px', lineHeight: 1 }}>{'🌿'}</span>
         </div>
         <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
           GraceBridge

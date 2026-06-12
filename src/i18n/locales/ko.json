@@ -8,7 +8,8 @@
     "screening": "스크리닝",
     "nutrition": "영양",
     "referral": "연결",
-    "log": "기록"
+    "log": "기록",
+    "dashboard": "통계"
   },
   "home": {
     "subtitle": "믿음과 건강을 잇는 다리",
@@ -360,10 +361,24 @@
   },
   "auth": {
     "subtitle": "믿음과 건강을 잇는 다리",
-    "title": "교회 코드 입력",
-    "desc": "교회 담당자로부터 받은 6자리 숫자 코드를 입력하세요.",
+    "title": "기관 코드 입력",
+    "desc": "담당자로부터 받은 6자리 숫자 코드를 입력하세요.",
     "error": "유효한 6자리 숫자를 입력해 주세요.",
     "confirm": "확인",
     "privacy": "개인 정보는 수집되지 않습니다. 익명 스크리닝 데이터만 저장됩니다."
+  },
+  "dashboard": {
+    "title": "대시보드",
+    "subtitle": "이 기기의 스크리닝 요약",
+    "total": "전체",
+    "highRisk": "의뢰 필요",
+    "referralRate": "의뢰율",
+    "riskDist": "위험도 분포",
+    "avgScores": "평균 점수",
+    "syncStatus": "동기화 상태",
+    "recent": "최근 스크리닝"
+  },
+  "log": {
+    "church": "기관"
   }
 }

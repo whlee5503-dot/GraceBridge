@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { path: '/screening', icon: Heart,         labelKey: 'nav.screening' },
   { path: '/nutrition', icon: Activity,      labelKey: 'nav.nutrition' },
   { path: '/referral',  icon: MapPin,        labelKey: 'nav.referral'  },
-  { path: '/patients',  icon: ClipboardList, labelKey: 'nav.log'       },
+  { path: '/dashboard', icon: ClipboardList, labelKey: 'nav.dashboard' },
 ]
 
 export default function NavBar() {

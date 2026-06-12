@@ -8,7 +8,8 @@
     "screening": "Screen",
     "nutrition": "Nutrition",
     "referral": "Referral",
-    "log": "Log"
+    "log": "Log",
+    "dashboard": "Stats"
   },
   "home": {
     "subtitle": "Bridging Faith and Health",
@@ -360,10 +361,24 @@
   },
   "auth": {
     "subtitle": "Bridging Faith and Health",
-    "title": "Enter Church Code",
-    "desc": "Enter the 6-digit code provided by your church coordinator.",
+    "title": "Enter Organization Code",
+    "desc": "Enter the 6-digit code provided by your organization coordinator.",
     "error": "Please enter a valid 6-digit code.",
     "confirm": "Confirm",
     "privacy": "No personal information is collected. Only anonymous screening data is stored."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Screening summary for this device",
+    "total": "Total",
+    "highRisk": "Needs Referral",
+    "referralRate": "Referral Rate",
+    "riskDist": "Risk Distribution",
+    "avgScores": "Average Scores",
+    "syncStatus": "Sync Status",
+    "recent": "Recent Screenings"
+  },
+  "log": {
+    "church": "Organization"
   }
 }
