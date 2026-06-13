@@ -202,6 +202,14 @@ GraceBridge uses a **pluggable referral database** — adding a new country requ
 
 ---
 
+## Test Bed
+
+🧪 **DPGA Verification Test Bed**: https://gracebridge.pages.dev/test-bed
+
+Validates clinical scoring accuracy, privacy-by-design, referral DB structure, and API endpoints.
+
+---
+
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
