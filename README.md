@@ -221,3 +221,33 @@ GraceBridge is free and open source. It will always remain free for use in low-r
 *"Grace로 사람들을 건강한 삶으로 연결(Bridge)한다"*
 
 **DPGA-First · Privacy-by-Design · Offline-First · Open Source (MIT)**
+
+---
+
+## Data Governance Roadmap
+
+GraceBridge is designed with a privacy-first architecture. Below is the planned evolution of data governance to ensure transparency for DPGA reviewers and potential implementing organizations.
+
+### Current State (MVP)
+- All screening data is **fully anonymous** — no names, ages, or contact information stored
+- Only `session_id` (device-generated UUID), `church_code`, `region_code`, and scores are saved
+- Data is stored in Supabase with Row Level Security (insert-only policy)
+- The project maintainer can view aggregate anonymous statistics for monitoring purposes only
+
+### Short-term (Phase 5 — Pre-DPGA)
+- Organization-specific dashboard URL per `church_code`
+- Each organization can view only their own anonymous aggregate statistics
+- No cross-organization data access
+
+### Medium-term (Post-DPGA)
+- Self-hosted deployment option
+- Organizations can run their own Supabase instance
+- Complete data sovereignty — maintainer has zero access to field data
+- Deployment guide for independent hosting
+
+### Long-term
+- DHIS2 / OpenMRS integration option for health system partners
+- Federated data model — each country deployment is fully independent
+- No central data collection required
+
+> **Note for DPGA reviewers**: The current architecture ensures that even in the MVP state, no personally identifiable information is ever collected or stored. The roadmap above describes planned improvements to organizational data sovereignty, not privacy compliance (which is already implemented by design).
