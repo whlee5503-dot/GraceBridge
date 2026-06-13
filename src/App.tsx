@@ -60,6 +60,7 @@ export default function App() {
               <Route path="/"          element={<Suspense fallback={<PageLoader />}><Home               /></Suspense>} />
               <Route path="/screening" element={<Suspense fallback={<PageLoader />}><ScreeningForm       /></Suspense>} />
               <Route path="/results"   element={<Suspense fallback={<PageLoader />}><ResultsPage         /></Suspense>} />
+              <Route path="/referral"  element={<Suspense fallback={<PageLoader />}><ReferralMap          /></Suspense>} />
               <Route path="/diagnose"  element={<Suspense fallback={<PageLoader />}><DiagnosticCheck     /></Suspense>} />
               <Route path="/nutrition" element={<Suspense fallback={<PageLoader />}><NutritionAssess     /></Suspense>} />
               <Route path="/dashboard" element={<Suspense fallback={<PageLoader />}><VolunteerDashboard  /></Suspense>} />
