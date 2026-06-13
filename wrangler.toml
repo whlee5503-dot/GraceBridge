@@ -5,13 +5,6 @@ name = "gracebridge"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "dist"
 
-# ── Cloudflare KV (Referral DB 캐시) ─────────────────────────────
-# 배포 후 아래 id는 실제 KV namespace ID로 교체 필요
-# 생성 명령: npx wrangler kv:namespace create REFERRAL_DB
-[[kv_namespaces]]
-binding = "REFERRAL_DB"
-id      = "YOUR_KV_NAMESPACE_ID"
-
 # ── 환경변수 (로컬 개발용) ────────────────────────────────────────
 # 실제 값은 Cloudflare Pages 대시보드 Variables and secrets에 설정
 [vars]
