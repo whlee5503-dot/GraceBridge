@@ -1,73 +1,215 @@
-# React + TypeScript + Vite
+# GraceBridge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Bridging Faith and Health**
 
-Currently, two official plugins are available:
+GraceBridge is a Progressive Web App (PWA) that empowers church volunteers to screen vulnerable populations for depression, malnutrition, and chronic conditions, then instantly refer them to nearby healthcare services.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![PWA](https://img.shields.io/badge/PWA-Offline--First-blue.svg)](https://web.dev/progressive-web-apps/)
+[![DPGA](https://img.shields.io/badge/DPGA-First%20Design-orange.svg)](https://digitalpublicgoods.net/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Overview](#overview)
+- [Clinical Tools](#clinical-tools)
+- [Privacy by Design](#privacy-by-design)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Deployment](#deployment)
+- [Country Expansion](#country-expansion)
+- [Roadmap](#roadmap)
+- [License](#license)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Overview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+GraceBridge targets low-resource settings where healthcare access is limited. Church volunteers — with no medical background — can:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Screen community members using validated clinical tools (PHQ-9, MNA-SF)
+2. View color-coded risk results (Green / Yellow / Orange / Red)
+3. Connect high-risk individuals to nearby health facilities via GPS map
+
+**Target populations:** Elderly living alone, homeless individuals, migrant workers, and other marginalized groups.
+
+**Target environments:** Low- and middle-income countries (LMICs), rural areas, and underserved urban communities.
+
+---
+
+## Clinical Tools
+
+| Tool | Purpose | Score Range | Standard |
+|---|---|---|---|
+| PHQ-9 | Depression screening | 0–27 | Kroenke & Spitzer (2001) |
+| MNA-SF | Nutrition screening | 0–14 | Rubenstein et al. (2001) |
+| Chronic Conditions | Checklist | Yes/No | WHO chronic disease list |
+
+### PHQ-9 Risk Levels
+| Score | Level | Action |
+|---|---|---|
+| 0–4 | 🟢 Green | No action needed |
+| 5–9 | 🟡 Yellow | Monitor |
+| 10–14 | 🟠 Orange | Professional consultation |
+| 15–19 | 🔴 Red | Referral required |
+| 20–27 | 🔴 Red+ | Urgent referral |
+
+### MNA-SF Risk Levels
+| Score | Level | Action |
+|---|---|---|
+| 12–14 | 🟢 Green | No action needed |
+| 8–11 | 🟡 Yellow | Dietary guidance |
+| 0–7 | 🔴 Red | Referral required |
+
+---
+
+## Privacy by Design
+
+GraceBridge is architected so that collecting personally identifiable information (PII) is **structurally impossible**:
+
+| Data | Stored |
+|---|---|
+| session_id (device-generated UUID) | ✅ |
+| church_code | ✅ |
+| region_code | ✅ |
+| PHQ-9 / MNA-SF scores | ✅ |
+| Name, age, gender, contact | ❌ Never |
+
+All data is stored anonymously in Supabase with Row Level Security (RLS) — insert only, no read-back by default.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19 + Vite + TypeScript + Tailwind CSS |
+| PWA | vite-plugin-pwa + Workbox (offline-first) |
+| Deployment | Cloudflare Pages + Functions |
+| Local DB | IndexedDB (offline queue) |
+| Server DB | Supabase (PostgreSQL + RLS) |
+| Referral Cache | Cloudflare KV |
+| i18n | i18next (en ✅ / ko ✅ / id 🔲 / fr 🔲 / sw 🔲) |
+| State | Zustand |
+| Mapping | Leaflet + OpenStreetMap |
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm 9+
+
+### Installation
+
+```bash
+git clone https://github.com/whlee5503-dot/GraceBridge.git
+cd GraceBridge
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment Variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Create a `.env` file in the project root:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+---
+
+## Deployment
+
+GraceBridge is deployed on **Cloudflare Pages** with automatic deployment on push to `main`.
+
+### Live URL
+🌐 https://gracebridge.pages.dev
+
+### Deploy Your Own
+
+1. Fork this repository
+2. Connect to Cloudflare Pages
+3. Set build command: `npm run build`
+4. Set output directory: `dist`
+5. Add environment variables:
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
+
+---
+
+## Country Expansion
+
+GraceBridge uses a **pluggable referral database** — adding a new country requires only one JSON file.
+
+### Add a New Country
+
+1. Create `/public/referral-data/{COUNTRY_CODE}.json`:
+
+```json
+{
+  "countryCode": "ID",
+  "countryName": "Indonesia",
+  "updatedAt": "2025-01-01",
+  "facilities": [
+    {
+      "id": "id-001",
+      "name": "Puskesmas Menteng",
+      "type": "health_center",
+      "address": "Jl. Raden Saleh No.45, Jakarta",
+      "lat": -6.1944,
+      "lng": 106.8378,
+      "phone": "+62-21-3148xxx",
+      "hours": "Mon-Fri 08:00-16:00",
+      "free": true,
+      "services": ["General health", "Mental health", "Nutrition"]
+    }
+  ]
+}
+```
+
+2. Add i18n translations in `/src/i18n/locales/{lang}.json`
+
+> ⚠️ PHQ-9 and MNA-SF translations must use **clinically validated versions** — machine translation is not acceptable.
+
+---
+
+## Roadmap
+
+| Phase | Status | Goal |
+|---|---|---|
+| Phase 0 | ✅ Done | EpiAid fork + core files |
+| Phase 1 | ✅ Done | scoring.ts + ScreeningForm UI |
+| Phase 2 | ✅ Done | ResultsPage + privacy.ts + Dashboard |
+| Phase 3 | ✅ Done | ReferralMap + GPS + KR referral DB |
+| Phase 4 | 🔄 In Progress | Cloudflare deploy + pilot |
+| Phase 5 | 🔲 Planned | DPGA application |
+| Phase 6 | 🔲 Planned | Indonesia expansion |
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
+
+GraceBridge is free and open source. It will always remain free for use in low-resource settings.
+
+---
+
+*"Grace로 사람들을 건강한 삶으로 연결(Bridge)한다"*
+
+**DPGA-First · Privacy-by-Design · Offline-First · Open Source (MIT)**
