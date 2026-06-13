@@ -45,8 +45,8 @@ function calcStats(screenings: PendingScreening[]) {
 
 // ── 위험도 바 차트 ────────────────────────────────────────────────
 function RiskBar({ level, count, total }: { level: RiskLevel; count: number; total: number }) {
-  const pct = total ? Math.round((count / total) * 100) : 0
   const st  = RISK_STYLE[level]
+  const pct = total > 0 ? Math.round((count / total) * 100) : 0
   return (
     <div className="flex items-center gap-3">
       <span className={`w-16 text-xs font-semibold ${st.text}`}>{st.label}</span>
@@ -57,55 +57,9 @@ function RiskBar({ level, count, total }: { level: RiskLevel; count: number; tot
         />
       </div>
       <span className="w-8 text-xs text-right text-slate-500 dark:text-slate-400 font-medium">{count}</span>
-      {/* ── 기기 초기화 ── */}
-      <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
-        <button
-          type="button"
-          onClick={() => setShowReset(true)}
-          className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-red-200 dark:border-red-800 text-red-500 dark:text-red-400 text-sm hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
-        >
-          <RotateCcw className="w-4 h-4" />
-          {t('dashboard.resetDevice', '기기 초기화')}
-        </button>
-      </div>
-
-      {/* ── Reset 확인 팝업 ── */}
-      {showReset && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-sm w-full shadow-xl">
-            <h3 className="font-semibold text-gray-900 dark:text-white text-base mb-2">
-              {t('dashboard.resetTitle', '기기 초기화')}
-            </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-              {t('dashboard.resetDesc', '모든 스크리닝 기록과 교회 코드가 삭제됩니다. 이 작업은 되돌릴 수 없습니다.')}
-            </p>
-            <div className="flex gap-3">
-              <button
-                type="button"
-                onClick={() => setShowReset(false)}
-                className="flex-1 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm"
-              >
-                {t('common.cancel', '취소')}
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  localStorage.clear()
-                  indexedDB.deleteDatabase('gracebridge-offline-queue')
-                  window.location.href = '/'
-                }}
-                className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-semibold"
-              >
-                {t('dashboard.resetConfirm', '초기화')}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
-
 // ══════════════════════════════════════════════════════════════════
 // 메인 컴포넌트
 // ══════════════════════════════════════════════════════════════════
@@ -266,6 +220,50 @@ export default function VolunteerDashboard() {
             </div>
           )}
 
+        </div>
+      )}
+      {/* ── 기기 초기화 ── */}
+      <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+        <button
+          type="button"
+          onClick={() => setShowReset(true)}
+          className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-red-200 dark:border-red-800 text-red-500 dark:text-red-400 text-sm hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+        >
+          <RotateCcw className="w-4 h-4" />
+          {t('dashboard.resetDevice', '기기 초기화')}
+        </button>
+      </div>
+
+      {showReset && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-sm w-full shadow-xl">
+            <h3 className="font-semibold text-gray-900 dark:text-white text-base mb-2">
+              {t('dashboard.resetTitle', '기기 초기화')}
+            </h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+              {t('dashboard.resetDesc', '모든 스크리닝 기록과 교회 코드가 삭제됩니다. 이 작업은 되돌릴 수 없습니다.')}
+            </p>
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={() => setShowReset(false)}
+                className="flex-1 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm"
+              >
+                {t('common.cancel', '취소')}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  localStorage.clear()
+                  indexedDB.deleteDatabase('gracebridge-offline-queue')
+                  window.location.href = '/'
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-semibold"
+              >
+                {t('dashboard.resetConfirm', '초기화')}
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
