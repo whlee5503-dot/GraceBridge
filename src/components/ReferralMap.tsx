@@ -113,7 +113,7 @@ export default function ReferralMap({
   const isLoading = gpsLoading || dbLoading
 
   return (
-    <div className="flex flex-col h-full bg-white dark:bg-gray-900">
+    <div className="flex flex-col bg-white dark:bg-gray-900" style={{ minHeight: "100vh" }}>
 
       {/* 헤더 */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700">
@@ -157,7 +157,7 @@ export default function ReferralMap({
         <div className="flex flex-col flex-1 overflow-hidden">
 
           {/* Leaflet 지도 */}
-          <div ref={mapRef} className="w-full" style={{ height: '260px', zIndex: 0 }} />
+          <div ref={mapRef} className="w-full" style={{ height: '40vh', minHeight: '240px', zIndex: 0 }} />
 
           {/* 시설 목록 */}
           <div className="flex-1 overflow-y-auto px-3 py-2 space-y-2">
