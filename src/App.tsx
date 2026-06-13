@@ -13,6 +13,7 @@ const ScreeningForm      = lazy(() => import('./components/ScreeningForm'))
 const VolunteerDashboard = lazy(() => import('./pages/VolunteerDashboard'))
 const PatientLog         = lazy(() => import('./pages/PatientLog'))
 const ResultsPage        = lazy(() => import('./pages/ResultsPage'))
+const ReferralMap        = lazy(() => import('./components/ReferralMap'))
 
 function PageLoader() {
   return (
