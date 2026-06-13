@@ -380,5 +380,34 @@
   },
   "log": {
     "church": "Organization"
+  },
+  "referral": {
+    "title": "Nearby Health Facilities",
+    "myLocation": "My Location",
+    "locationFallback": "GPS unavailable — showing results near Seoul City Hall.",
+    "retry": "Retry",
+    "loading": "Finding nearby facilities...",
+    "noFacilities": "No registered facilities found nearby.",
+    "free": "Free",
+    "distanceKm": "{{dist}} km away"
+  },
+  "results": {
+    "combinedRisk": "Overall Risk Level",
+    "phq9Title": "Depression Screening (PHQ-9)",
+    "mnasfTitle": "Nutrition Screening (MNA-SF)",
+    "chronicTitle": "Chronic Conditions",
+    "chronicNone": "None reported",
+    "chronicCount": "{{count}} condition(s) reported",
+    "chronicHighRisk": "— High-risk condition included",
+    "action": {
+      "green": "All clear. Please continue to monitor regularly.",
+      "yellow": "Mild risk detected. Monitoring is recommended.",
+      "orange": "Moderate risk. Professional consultation is recommended.",
+      "red": "Immediate referral to a healthcare facility is required."
+    },
+    "findFacility": "Find Nearby Health Facility",
+    "copyResult": "Copy Result Text",
+    "copied": "Copied!",
+    "newScreening": "Start New Screening"
   }
 }

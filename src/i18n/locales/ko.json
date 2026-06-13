@@ -380,5 +380,34 @@
   },
   "log": {
     "church": "기관"
+  },
+  "referral": {
+    "title": "가까운 의료기관",
+    "myLocation": "내 위치",
+    "locationFallback": "GPS를 가져올 수 없어 서울 시청 기준으로 표시합니다.",
+    "retry": "재시도",
+    "loading": "주변 의료기관을 찾는 중...",
+    "noFacilities": "주변에 등록된 시설이 없습니다.",
+    "free": "무료",
+    "distanceKm": "{{dist}} km"
+  },
+  "results": {
+    "combinedRisk": "종합 위험도",
+    "phq9Title": "우울증 스크리닝 (PHQ-9)",
+    "mnasfTitle": "영양 스크리닝 (MNA-SF)",
+    "chronicTitle": "만성질환 체크",
+    "chronicNone": "해당 없음",
+    "chronicCount": "{{count}}개 해당",
+    "chronicHighRisk": "— 고위험 항목 포함",
+    "action": {
+      "green": "양호합니다. 지속적인 관심을 가져주세요.",
+      "yellow": "경미한 위험이 있습니다. 모니터링을 권고합니다.",
+      "orange": "전문가 상담을 권고합니다.",
+      "red": "즉시 의료기관 연결이 필요합니다."
+    },
+    "findFacility": "가까운 의료기관 찾기",
+    "copyResult": "결과 텍스트 복사",
+    "copied": "복사됨!",
+    "newScreening": "새 스크리닝 시작"
   }
 }

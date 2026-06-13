@@ -179,7 +179,7 @@ export default function ScreeningForm() {
       regionCode:        'KR',
       phq9Score:         phq9Result.score,
       mnaSfScore:        mnaSFResult.score,
-      chronicConditions: chronic as Record<string, boolean>,
+      chronicConditions: chronic as unknown as Record<string, boolean>,
       riskLevel:         combined,
     }).catch(console.error)
 
