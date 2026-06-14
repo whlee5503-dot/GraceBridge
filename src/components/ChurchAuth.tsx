@@ -55,7 +55,14 @@ export default function ChurchAuth({ onSuccess }: ChurchAuthProps) {
           className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
           style={{ backgroundColor: '#2D6A4F20' }}
         >
-          <span style={{ fontSize: '32px', lineHeight: 1 }}>{'🌿'}</span>
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#106C5A"/>
+            <rect x="16.2" y="6" width="3.6" height="16" rx="1.2" fill="white"/>
+            <rect x="9" y="12" width="18" height="3.6" rx="1.2" fill="white"/>
+            <path d="M6 29 A12 8 0 0 1 30 29" fill="none" stroke="#86EFA8" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="5" y="25" width="2.5" height="4" rx="0.5" fill="#86EFA8"/>
+            <rect x="28.5" y="25" width="2.5" height="4" rx="0.5" fill="#86EFA8"/>
+          </svg>
         </div>
         <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
           GraceBridge
