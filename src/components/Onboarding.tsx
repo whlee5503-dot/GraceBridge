@@ -13,7 +13,16 @@ interface OnboardingProps {
 }
 
 function IconWelcome() {
-  return <span style={{ fontSize: '40px', lineHeight: 1 }}>{'🌿'}</span>
+  return (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="72" height="72" rx="16" fill="#106C5A"/>
+      <rect x="32.4" y="12" width="7.2" height="28.8" rx="2" fill="white"/>
+      <rect x="18" y="24.5" width="36" height="7.2" rx="2" fill="white"/>
+      <path d="M14 58 A22 14 0 0 1 58 58" fill="none" stroke="#86EFA8" stroke-width="4" stroke-linecap="round"/>
+      <rect x="12" y="50" width="4" height="8" fill="#86EFA8"/>
+      <rect x="56" y="50" width="4" height="8" fill="#86EFA8"/>
+    </svg>
+  )
 }
 
 function IconTools() {
