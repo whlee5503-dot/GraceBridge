@@ -79,7 +79,7 @@ export default function HelpPage() {
               { color: '#eab308', bg: '#fefce8', label: 'Yellow', desc: 'Monitor — follow up recommended' },
               { color: '#f97316', bg: '#fff7ed', label: 'Orange', desc: 'Refer — connect to a professional' },
               { color: '#ef4444', bg: '#fef2f2', label: 'Red', desc: 'Urgent — immediate referral required' },
-            ].map(({ color, bg, label, desc }) => (
+            ].map(({ color, label, desc }) => (
               <div key={label} className="flex items-center gap-3">
                 <span
                   className="w-3 h-3 rounded-full flex-shrink-0"
