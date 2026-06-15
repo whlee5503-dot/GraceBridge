@@ -409,5 +409,54 @@
     "copyResult": "Copy Result Text",
     "copied": "Copied!",
     "newScreening": "Start New Screening"
+  },
+  "help": {
+    "modalTitle": "How to use GraceBridge",
+    "flow": "App Flow",
+    "flowSteps": [
+      "First visit: Onboarding → Enter organization code → Home",
+      "Return visit: Opens directly to Home (code saved on device)",
+      "If app resets: Onboarding starts again"
+    ],
+    "tools": "Screening Tools",
+    "toolList": [
+      "Health Screening — PHQ-9 (depression) + MNA-SF (nutrition) + chronic conditions",
+      "Nutrition Assessment — MUAC-based malnutrition screening",
+      "Find a Clinic — GPS-based referral to nearby health centers",
+      "Screening Log — Anonymous history of past screenings"
+    ],
+    "terms": "Key Terms",
+    "termList": [
+      {
+        "term": "PHQ-9",
+        "desc": "Patient Health Questionnaire-9. A validated 9-item tool to screen for depression severity."
+      },
+      {
+        "term": "MNA-SF",
+        "desc": "Mini Nutritional Assessment – Short Form. A 6-item validated tool to assess malnutrition risk."
+      },
+      {
+        "term": "Risk Level",
+        "desc": "Green (normal) · Yellow (monitor) · Orange (refer) · Red (urgent referral)."
+      },
+      {
+        "term": "Organization Code",
+        "desc": "A 6-digit code assigned to your faith community or organization. Required to use the app."
+      },
+      {
+        "term": "Referral",
+        "desc": "Connecting a screened person to a nearby clinic or health center for follow-up care."
+      },
+      {
+        "term": "Offline Ready",
+        "desc": "The app works without internet. Data syncs automatically when connection is restored."
+      }
+    ],
+    "privacy": "Privacy",
+    "privacyDesc": "No personal identifying information is collected. Only anonymous scores and region codes are stored.",
+    "pageTitle": "Volunteer Guide",
+    "pageSubtitle": "Everything you need to use GraceBridge effectively",
+    "close": "Close",
+    "openGuide": "Open full guide"
   }
 }

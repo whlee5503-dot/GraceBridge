@@ -14,6 +14,7 @@ const VolunteerDashboard = lazy(() => import('./pages/VolunteerDashboard'))
 const PatientLog         = lazy(() => import('./pages/PatientLog'))
 const ResultsPage        = lazy(() => import('./pages/ResultsPage'))
 const ReferralMap        = lazy(() => import('./components/ReferralMap'))
+const HelpPage           = lazy(() => import('./pages/HelpPage'))
 
 function PageLoader() {
   return (
@@ -66,6 +67,7 @@ export default function App() {
               <Route path="/nutrition" element={<Suspense fallback={<PageLoader />}><NutritionAssess     /></Suspense>} />
               <Route path="/dashboard" element={<Suspense fallback={<PageLoader />}><VolunteerDashboard  /></Suspense>} />
               <Route path="/patients"  element={<Suspense fallback={<PageLoader />}><PatientLog          /></Suspense>} />
+              <Route path="/help"      element={<Suspense fallback={<PageLoader />}><HelpPage            /></Suspense>} />
             </Route>
           </Routes>
         </BrowserRouter>
