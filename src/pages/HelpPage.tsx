@@ -1,7 +1,7 @@
 // src/pages/HelpPage.tsx
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, Shield, Wifi } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Shield } from 'lucide-react'
 
 export default function HelpPage() {
   const { t } = useTranslation()
