@@ -71,14 +71,14 @@ export default function HelpPage() {
         {/* 위험도 색상 안내 */}
         <section>
           <h2 className="text-xs font-bold uppercase tracking-wide text-[#106C5A] dark:text-green-400 mb-3">
-            Risk Levels
+            {t('help.riskLevels', 'Risk Levels')}
           </h2>
           <div className="bg-white dark:bg-[#1a2e28] rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 space-y-2">
             {[
-              { color: '#22c55e', bg: '#f0fdf4', label: 'Green', desc: 'Normal — no immediate action needed' },
-              { color: '#eab308', bg: '#fefce8', label: 'Yellow', desc: 'Monitor — follow up recommended' },
-              { color: '#f97316', bg: '#fff7ed', label: 'Orange', desc: 'Refer — connect to a professional' },
-              { color: '#ef4444', bg: '#fef2f2', label: 'Red', desc: 'Urgent — immediate referral required' },
+              { color: '#22c55e', label: t('help.riskGreen', 'Green'), desc: t('help.riskGreenDesc', 'Normal — no immediate action needed') },
+              { color: '#eab308', label: t('help.riskYellow', 'Yellow'), desc: t('help.riskYellowDesc', 'Monitor — follow up recommended') },
+              { color: '#f97316', label: t('help.riskOrange', 'Orange'), desc: t('help.riskOrangeDesc', 'Refer — connect to a professional') },
+              { color: '#ef4444', label: t('help.riskRed', 'Red'), desc: t('help.riskRedDesc', 'Urgent — immediate referral required') },
             ].map(({ color, label, desc }) => (
               <div key={label} className="flex items-center gap-3">
                 <span
@@ -119,15 +119,7 @@ export default function HelpPage() {
               <p className="text-xs text-green-600 dark:text-green-400 mt-0.5 leading-relaxed">{t('help.privacyDesc')}</p>
             </div>
           </div>
-          <div className="rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 px-4 py-3 flex items-start gap-3">
-            <Wifi size={18} className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="text-sm font-bold text-blue-700 dark:text-blue-300">{t('help.offlineTitle', 'Offline First')}</p>
-              <p className="text-xs text-blue-600 dark:text-blue-400 mt-0.5 leading-relaxed">
-                Works without internet. Screening data is saved locally and syncs automatically when reconnected.
-              </p>
-            </div>
-          </div>
+
         </section>
 
         {/* 버전 */}

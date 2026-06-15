@@ -466,9 +466,14 @@
     "openGuide": "전체 가이드 보기",
     "offlineTitle": "오프라인 지원",
     "riskLevels": "위험도 안내",
-    "riskGreen": "정상 — 즉각적인 조치 불필요",
-    "riskYellow": "모니터링 — 추적 관찰 권고",
-    "riskOrange": "의뢰 — 전문가 연결 권고",
-    "riskRed": "긴급 — 즉시 의료기관 의뢰 필요"
+    "riskGreen": "녹색",
+    "riskYellow": "노랑",
+    "riskOrange": "주황",
+    "riskRed": "빨강",
+    "riskGreenDesc": "정상 — 즉각적인 조치 불필요",
+    "riskYellowDesc": "모니터링 — 추적 관찰 권고",
+    "riskOrangeDesc": "의뢰 — 전문가 연결 권고",
+    "riskRedDesc": "긴급 — 즉시 의료기관 의뢰 필요",
+    "offlineDesc": "인터넷 없이도 앱이 작동합니다. 연결 복구 시 자동으로 데이터가 동기화됩니다."
   }
 }
