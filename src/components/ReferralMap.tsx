@@ -54,7 +54,8 @@ export default function ReferralMap({
       leafletMap.current = null
     }
 
-    import('leaflet').then(L => {
+    import('leaflet/dist/leaflet.css').catch(() => {})
+      import('leaflet').then(L => {
       delete (L.Icon.Default.prototype as any)._getIconUrl
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
