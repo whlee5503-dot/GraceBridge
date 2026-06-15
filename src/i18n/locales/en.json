@@ -379,7 +379,9 @@
     "recent": "Recent Screenings"
   },
   "log": {
-    "church": "Organization"
+    "church": "Organization",
+    "synced": "Synced",
+    "pending": "Pending"
   },
   "referral": {
     "title": "Nearby Health Facilities",

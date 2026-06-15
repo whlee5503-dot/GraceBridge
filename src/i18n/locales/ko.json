@@ -115,7 +115,9 @@
     "disclaimer": "항상 전문 의료인과 확인하세요",
     "ageRange": "나이는 0~60개월이어야 합니다",
     "heightRange": "신장은 45~120 cm이어야 합니다",
-    "noResult": "측정값을 입력하고 평가 버튼을 누르세요"
+    "noResult": "측정값을 입력하고 평가 버튼을 누르세요",
+    "mamRange": "MAM 115–124",
+    "normalRange": "정상 ≥125"
   },
   "diagnose": {
     "title": "증상 체크리스트",
@@ -379,7 +381,11 @@
     "recent": "최근 스크리닝"
   },
   "log": {
-    "church": "기관"
+    "church": "기관",
+    "refresh": "새로고침",
+    "empty": "아직 스크리닝 기록이 없습니다.",
+    "synced": "동기화됨",
+    "pending": "대기 중"
   },
   "referral": {
     "title": "가까운 의료기관",
@@ -457,6 +463,12 @@
     "pageTitle": "봉사자 가이드",
     "pageSubtitle": "GraceBridge를 효과적으로 사용하기 위한 안내",
     "close": "닫기",
-    "openGuide": "전체 가이드 보기"
+    "openGuide": "전체 가이드 보기",
+    "offlineTitle": "오프라인 지원",
+    "riskLevels": "위험도 안내",
+    "riskGreen": "정상 — 즉각적인 조치 불필요",
+    "riskYellow": "모니터링 — 추적 관찰 권고",
+    "riskOrange": "의뢰 — 전문가 연결 권고",
+    "riskRed": "긴급 — 즉시 의료기관 의뢰 필요"
   }
 }

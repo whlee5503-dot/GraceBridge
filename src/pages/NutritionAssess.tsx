@@ -159,8 +159,8 @@ function MuacChips({ target }: { target: MuacTarget }) {
   return (
     <div className="flex flex-wrap gap-1.5 mt-2 text-[10px]">
       <span className="px-2 py-0.5 rounded-full bg-red-100 text-red-700">SAM &lt;115</span>
-      <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">MAM 115–124</span>
-      <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700">Normal ≥125</span>
+      <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">{t('nutrition.mamRange', 'MAM 115–124')}</span>
+      <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700">{t('nutrition.normalRange', 'Normal ≥125')}</span>
     </div>
   );
 }

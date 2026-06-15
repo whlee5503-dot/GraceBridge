@@ -122,7 +122,7 @@ export default function HelpPage() {
           <div className="rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 px-4 py-3 flex items-start gap-3">
             <Wifi size={18} className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-bold text-blue-700 dark:text-blue-300">Offline First</p>
+              <p className="text-sm font-bold text-blue-700 dark:text-blue-300">{t('help.offlineTitle', 'Offline First')}</p>
               <p className="text-xs text-blue-600 dark:text-blue-400 mt-0.5 leading-relaxed">
                 Works without internet. Screening data is saved locally and syncs automatically when reconnected.
               </p>
