@@ -2,8 +2,9 @@
 
 > **Bridging Faith and Health**
 
-GraceBridge is a Progressive Web App (PWA) that empowers church volunteers to screen vulnerable populations for depression, malnutrition, and chronic conditions, then instantly refer them to nearby healthcare services.
+GraceBridge is a Progressive Web App (PWA) that empowers faith community volunteers to screen vulnerable populations for depression, malnutrition, and chronic conditions, then instantly refer them to nearby healthcare services.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20702387.svg)](https://doi.org/10.5281/zenodo.20702387)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PWA](https://img.shields.io/badge/PWA-Offline--First-blue.svg)](https://web.dev/progressive-web-apps/)
 [![DPGA](https://img.shields.io/badge/DPGA-First%20Design-orange.svg)](https://digitalpublicgoods.net/)
