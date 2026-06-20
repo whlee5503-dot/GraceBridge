@@ -14,6 +14,7 @@ const TOOLS = [
 const LANGS = [
   { code: 'en', label: 'EN' },
   { code: 'ko', label: '한' },
+  { code: 'id', label: 'ID' },
 ]
 
 export default function Home() {

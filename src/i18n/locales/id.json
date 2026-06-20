@@ -1,1 +1,330 @@
-{}
+{
+  "app": {
+    "name": "GraceBridge",
+    "tagline": "Alat Skrining Kesehatan Komunitas"
+  },
+  "nav": {
+    "home": "Beranda",
+    "screening": "Skrining",
+    "nutrition": "Nutrisi",
+    "referral": "Rujukan",
+    "log": "Log",
+    "dashboard": "Statistik"
+  },
+  "home": {
+    "subtitle": "Menjembatani Iman dan Kesehatan",
+    "offline": "Siap offline",
+    "tools": "Alat Skrining",
+    "screening": "Skrining Kesehatan",
+    "screeningDesc": "PHQ-9 · MNA-SF · Penyakit Kronis",
+    "nutrition": "Penilaian Gizi",
+    "nutritionDesc": "Skrining MUAC dan malnutrisi",
+    "referral": "Cari Klinik",
+    "referralDesc": "Fasilitas kesehatan terdekat berbasis GPS",
+    "log": "Log Skrining",
+    "logDesc": "Riwayat hasil anonim"
+  },
+  "common": {
+    "back": "Kembali",
+    "close": "Tutup",
+    "loading": "Memuat…",
+    "error": "Terjadi kesalahan",
+    "yes": "Ya",
+    "no": "Tidak",
+    "next": "Lanjut"
+  },
+  "screening": {
+    "step": "Langkah",
+    "calculate": "Hitung Hasil",
+    "consent": {
+      "title": "Skrining Kesehatan",
+      "body": "Skrining ini menggunakan alat klinis yang telah divalidasi (PHQ-9, MNA-SF) untuk mengidentifikasi risiko kesehatan. Tidak ada informasi pribadi yang dikumpulkan.",
+      "point1": "Anonim — tidak ada nama, usia, atau kontak yang disimpan",
+      "point2": "Hasil tersimpan di perangkat ini hingga disinkronkan",
+      "point3": "Hanya untuk sukarelawan — bukan diagnosis medis",
+      "start": "Mulai Skrining"
+    },
+    "phq9": {
+      "title": "Skrining Depresi (PHQ-9)",
+      "instruction": "Selama 2 minggu terakhir, seberapa sering Anda terganggu oleh hal-hal berikut?",
+      "opt0": "Tidak sama sekali",
+      "opt1": "Beberapa hari",
+      "opt2": "Lebih dari separuh hari",
+      "opt3": "Hampir setiap hari",
+      "q1": "Little interest or pleasure in doing things",
+      "q2": "Feeling down, depressed, or hopeless",
+      "q3": "Trouble falling or staying asleep, or sleeping too much",
+      "q4": "Feeling tired or having little energy",
+      "q5": "Poor appetite or overeating",
+      "q6": "Feeling bad about yourself — or that you are a failure",
+      "q7": "Trouble concentrating on things",
+      "q8": "Moving or speaking slowly / being restless or fidgety",
+      "q9": "Thoughts that you would be better off dead or of hurting yourself"
+    },
+    "mnasf": {
+      "title": "Skrining Gizi (MNA-SF)",
+      "q1": "Has food intake declined over the past 3 months?",
+      "q1_0": "Severe decrease",
+      "q1_1": "Moderate decrease",
+      "q1_2": "No decrease",
+      "q2": "Weight loss during the last 3 months?",
+      "q2_0": "More than 3 kg",
+      "q2_1": "Does not know",
+      "q2_2": "1 to 3 kg",
+      "q2_3": "No weight loss",
+      "q3": "Mobility",
+      "q3_0": "Bed or chair bound",
+      "q3_1": "Able to get out of bed/chair, but does not go out",
+      "q3_2": "Goes out",
+      "q4": "Psychological stress or acute disease in the past 3 months?",
+      "q4_0": "Yes",
+      "q4_2": "No",
+      "q5": "Neuropsychological problems",
+      "q5_0": "Severe dementia or depression",
+      "q5_1": "Mild dementia",
+      "q5_2": "No psychological problems",
+      "q6": "BMI or calf circumference",
+      "q6_0": "BMI < 19 or CC < 31 cm",
+      "q6_1": "BMI 19 to 21",
+      "q6_2": "BMI 21 to 23",
+      "q6_3": "BMI ≥ 23 or CC ≥ 31 cm"
+    },
+    "chronic": {
+      "title": "Kondisi Kronis",
+      "instruction": "Pilih semua yang berlaku",
+      "hypertension": "Tekanan darah tinggi (Hipertensi)",
+      "diabetes": "Diabetes",
+      "heartDisease": "Penyakit jantung",
+      "stroke": "Stroke",
+      "copd": "Penyakit paru kronis (PPOK)",
+      "cancer": "Kanker",
+      "kidneyDisease": "Penyakit ginjal kronis",
+      "other": "Kondisi kronis lainnya"
+    },
+    "result": {
+      "title": "Hasil Skrining",
+      "combined": "Tingkat Risiko Keseluruhan",
+      "phq9": "Depresi (PHQ-9)",
+      "mnasf": "Gizi (MNA-SF)",
+      "chronic": "Kondisi Kronis",
+      "conditions": "kondisi",
+      "highRiskCondition": "Kondisi berisiko tinggi terdeteksi — rujukan sangat disarankan",
+      "newScreening": "Skrining Baru"
+    }
+  },
+  "onboarding": {
+    "s1": {
+      "title": "Selamat Datang di GraceBridge",
+      "desc": "Memberdayakan sukarelawan komunitas iman untuk melakukan skrining kesehatan bagi anggota komunitas rentan dan menghubungkan mereka ke layanan kesehatan terdekat."
+    },
+    "s2": {
+      "title": "Tiga Alat Skrining",
+      "desc": "PHQ-9 untuk depresi, MNA-SF untuk gizi, dan daftar periksa kondisi kronis — semua berdasarkan standar klinis yang telah divalidasi."
+    },
+    "s3": {
+      "title": "Privasi Sejak Awal",
+      "desc": "Tidak ada nama, usia, atau informasi kontak yang pernah dikumpulkan. Hanya skor anonim yang disimpan untuk melindungi orang-orang yang Anda layani."
+    },
+    "consent": "Saya memahami bahwa alat ini hanya untuk skrining sukarelawan, bukan diagnosis medis. Tidak ada informasi pengenal pribadi yang akan dikumpulkan.",
+    "agree": "Saya Setuju & Lanjutkan",
+    "next": "Lanjut",
+    "skip": "Lewati"
+  },
+  "auth": {
+    "subtitle": "Menjembatani Iman dan Kesehatan",
+    "title": "Masukkan Kode Organisasi",
+    "desc": "Masukkan kode 6 digit yang diberikan oleh koordinator organisasi Anda. Untuk mencoba aplikasi, gunakan kode apa saja (contoh: 123456).",
+    "error": "Masukkan kode 6 digit yang valid.",
+    "confirm": "Konfirmasi",
+    "privacy": "Tidak ada informasi pribadi yang dikumpulkan. Hanya data skrining anonim yang disimpan."
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "subtitle": "Ringkasan skrining di perangkat ini",
+    "total": "Total",
+    "highRisk": "Perlu Rujukan",
+    "referralRate": "Tingkat Rujukan",
+    "riskDist": "Distribusi Risiko",
+    "avgScores": "Rata-rata Skor",
+    "syncStatus": "Status Sinkronisasi",
+    "recent": "Skrining Terbaru"
+  },
+  "log": {
+    "church": "Organisasi",
+    "refresh": "Perbarui",
+    "empty": "Belum ada skrining yang tercatat.",
+    "synced": "Tersinkronisasi",
+    "pending": "Menunggu"
+  },
+  "referral": {
+    "title": "Fasilitas Kesehatan Terdekat",
+    "myLocation": "Lokasi Saya",
+    "locationFallback": "GPS tidak tersedia — menampilkan hasil di sekitar Balai Kota Seoul.",
+    "retry": "Coba Lagi",
+    "loading": "Mencari fasilitas terdekat...",
+    "noFacilities": "Tidak ada fasilitas terdaftar di sekitar Anda.",
+    "free": "Gratis",
+    "distanceKm": "{{dist}} km"
+  },
+  "results": {
+    "combinedRisk": "Tingkat Risiko Keseluruhan",
+    "phq9Title": "Skrining Depresi (PHQ-9)",
+    "mnasfTitle": "Skrining Gizi (MNA-SF)",
+    "chronicTitle": "Kondisi Kronis",
+    "chronicNone": "Tidak ada yang dilaporkan",
+    "chronicCount": "{{count}} kondisi dilaporkan",
+    "chronicHighRisk": "— Kondisi berisiko tinggi termasuk",
+    "action": {
+      "green": "Semua baik. Terus pantau secara rutin.",
+      "yellow": "Risiko ringan terdeteksi. Pemantauan disarankan.",
+      "orange": "Risiko sedang. Konsultasi profesional disarankan.",
+      "red": "Rujukan segera ke fasilitas kesehatan diperlukan."
+    },
+    "findFacility": "Cari Fasilitas Kesehatan Terdekat",
+    "copyResult": "Salin Teks Hasil",
+    "copied": "Tersalin!",
+    "newScreening": "Mulai Skrining Baru"
+  },
+  "help": {
+    "modalTitle": "Cara Menggunakan GraceBridge",
+    "flow": "Alur Aplikasi",
+    "flowSteps": [
+      "Kunjungan pertama: Onboarding → Masukkan kode organisasi → Beranda",
+      "Kunjungan berikutnya: Langsung ke Beranda (kode tersimpan di perangkat)",
+      "Jika aplikasi direset: Onboarding dimulai lagi"
+    ],
+    "tools": "Alat Skrining",
+    "toolList": [
+      "Skrining Kesehatan — PHQ-9 (depresi) + MNA-SF (gizi) + kondisi kronis",
+      "Penilaian Gizi — Skrining malnutrisi berbasis MUAC",
+      "Cari Klinik — Rujukan berbasis GPS ke pusat kesehatan terdekat",
+      "Log Skrining — Riwayat anonim skrining sebelumnya"
+    ],
+    "terms": "Istilah Penting",
+    "termList": [
+      {
+        "term": "PHQ-9",
+        "desc": "Patient Health Questionnaire-9. Alat 9 pertanyaan yang telah divalidasi untuk menilai tingkat keparahan depresi."
+      },
+      {
+        "term": "MNA-SF",
+        "desc": "Mini Nutritional Assessment – Short Form. Alat 6 pertanyaan yang telah divalidasi untuk menilai risiko malnutrisi."
+      },
+      {
+        "term": "Tingkat Risiko",
+        "desc": "Hijau (normal) · Kuning (pantau) · Oranye (rujuk) · Merah (rujukan mendesak)."
+      },
+      {
+        "term": "Kode Organisasi",
+        "desc": "Kode 6 digit yang ditetapkan untuk komunitas iman atau organisasi Anda. Diperlukan untuk menggunakan aplikasi. Untuk mencoba, gunakan kode apa saja (contoh: 123456)."
+      },
+      {
+        "term": "Rujukan",
+        "desc": "Menghubungkan orang yang diperiksa ke klinik atau pusat kesehatan terdekat untuk perawatan lanjutan."
+      },
+      {
+        "term": "Siap Offline",
+        "desc": "Aplikasi bekerja tanpa internet. Data disinkronkan otomatis saat koneksi pulih."
+      }
+    ],
+    "privacy": "Privasi",
+    "privacyDesc": "Tidak ada informasi pengenal pribadi yang dikumpulkan. Hanya skor anonim dan kode wilayah yang disimpan.",
+    "pageTitle": "Panduan Sukarelawan",
+    "pageSubtitle": "Semua yang Anda butuhkan untuk menggunakan GraceBridge secara efektif",
+    "close": "Tutup",
+    "openGuide": "Buka panduan lengkap",
+    "offlineTitle": "Dukungan Offline",
+    "riskLevels": "Panduan Tingkat Risiko",
+    "riskGreen": "Hijau",
+    "riskGreenDesc": "Normal — tidak perlu tindakan segera",
+    "riskYellow": "Kuning",
+    "riskYellowDesc": "Pantau — tindak lanjut disarankan",
+    "riskOrange": "Oranye",
+    "riskOrangeDesc": "Rujuk — hubungkan ke profesional",
+    "riskRed": "Merah",
+    "riskRedDesc": "Mendesak — rujukan segera diperlukan",
+    "offlineDesc": "Aplikasi bekerja tanpa internet. Data skrining disimpan secara lokal dan disinkronkan secara otomatis saat koneksi pulih."
+  },
+  "nutrition": {
+    "title": "Penilaian Gizi",
+    "muac": "MUAC (mm)",
+    "muacHint": "Lingkar Lengan Atas Tengah",
+    "weight": "Berat (kg)",
+    "height": "Tinggi (cm)",
+    "ageMonths": "Usia (bulan)",
+    "sex": "Jenis Kelamin",
+    "male": "Laki-laki",
+    "female": "Perempuan",
+    "edema": "Edema pitting bilateral",
+    "assess": "Nilai",
+    "reset": "Reset",
+    "status": "Status Gizi",
+    "sam": "SAM — Gizi Buruk Akut Berat",
+    "mam": "MAM — Gizi Buruk Akut Sedang",
+    "atRisk": "Berisiko",
+    "normal": "Normal",
+    "edemaLabel": "SAM (Edema)",
+    "recommendation": "Rekomendasi",
+    "criteria": "Kriteria terpenuhi",
+    "muacTab": "MUAC",
+    "zscoreTab": "Z-Score",
+    "childTarget": "Anak (6bln–5thn)",
+    "pregnantTarget": "Ibu hamil",
+    "howToMeasure": "Cara mengukur MUAC",
+    "howStep1": "1. Tekuk siku 90°. Tandai titik tengah antara ujung bahu dan ujung siku (lengan kiri).",
+    "howStep2": "2. Lengan rileks di sisi tubuh. Lilit pita MUAC di titik tengah — tidak terlalu ketat atau longgar.",
+    "howStep3": "3. Baca nilai di mana ujung pita sejajar dengan skala (tanda nol).",
+    "pregnantNormal": "Normal",
+    "pregnantModerate": "Risiko Sedang",
+    "pregnantHigh": "Risiko Tinggi",
+    "pregnantNormalRec": "Lanjutkan perawatan antenatal rutin. Dukungan gizi disarankan.",
+    "pregnantModerateRec": "Daftarkan dalam program pemberian makanan tambahan. Pantau setiap bulan.",
+    "pregnantHighRec": "Rujuk segera untuk intervensi gizi terapeutik.",
+    "edemaRec": "Masukkan ke program SAM. Obati kwashiorkor.",
+    "samRec": "Rujuk ke program SAM (OTP/TFC). Antibiotik rutin + Vitamin A.",
+    "mamRec": "Daftarkan dalam Program Pemberian Makanan Tambahan (SFP). Pantau setiap minggu.",
+    "normalRec": "Lanjutkan pemantauan pertumbuhan. Tidak diperlukan intervensi.",
+    "indicator": "Indikator",
+    "heightInput": "Tinggi / Panjang (cm)",
+    "zWHZSevere": "SAM — Berat-untuk-tinggi (WHZ < −3)",
+    "zWHZModerate": "MAM — Berat-untuk-tinggi (WHZ −3 sampai −2)",
+    "zHAZSevere": "Stunting Berat (HAZ < −3)",
+    "zHAZModerate": "Stunting Sedang (HAZ −3 sampai −2)",
+    "zWAZSevere": "Gizi Kurang Berat (WAZ < −3)",
+    "zWAZModerate": "Gizi Kurang Sedang (WAZ −3 sampai −2)",
+    "zSevereRec": "Masukkan ke program pemberian makanan terapeutik. Obati penyebab yang mendasari.",
+    "zModerateRec": "Rujuk ke program pemberian makanan tambahan. Tindak lanjut dalam 4 minggu.",
+    "zNormalRec": "Lanjutkan pemantauan pertumbuhan. Tidak diperlukan intervensi.",
+    "borderlineNote": "Hasil batas — verifikasi dengan penilaian klinis",
+    "disclaimer": "Selalu verifikasi dengan klinisi yang berkualifikasi",
+    "ageRange": "Usia harus 0–60 bulan",
+    "heightRange": "Tinggi harus 45–120 cm",
+    "noResult": "Masukkan pengukuran dan ketuk Nilai",
+    "mamRange": "MAM 115–124",
+    "normalRange": "Normal ≥125"
+  },
+  "patients": {
+    "title": "Log Pasien",
+    "newPatient": "Pasien Baru",
+    "search": "Cari pasien...",
+    "noPatients": "Belum ada pasien yang tercatat.",
+    "name": "Nama",
+    "age": "Usia",
+    "ageMonths": "bulan",
+    "ageYears": "tahun",
+    "sex": "Jenis Kelamin",
+    "male": "L",
+    "female": "P",
+    "weight": "Berat (kg)",
+    "height": "Tinggi (cm)",
+    "muac": "MUAC (mm)",
+    "diagnosis": "Diagnosis / Penilaian",
+    "notes": "Catatan",
+    "save": "Simpan Pasien",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "recorded": "Tercatat",
+    "confirmDelete": "Hapus catatan pasien ini?"
+  }
+}
