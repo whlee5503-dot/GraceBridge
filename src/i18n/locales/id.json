@@ -248,7 +248,11 @@
     "riskOrangeDesc": "Rujuk — hubungkan ke profesional",
     "riskRed": "Merah",
     "riskRedDesc": "Mendesak — rujukan segera diperlukan",
-    "offlineDesc": "Aplikasi bekerja tanpa internet. Data skrining disimpan secara lokal dan disinkronkan secara otomatis saat koneksi pulih."
+    "offlineDesc": "Aplikasi bekerja tanpa internet. Data skrining disimpan secara lokal dan disinkronkan secara otomatis saat koneksi pulih.",
+    "tooltip": "Bantuan",
+    "resetApp": "Reset Aplikasi",
+    "resetDesc": "Hapus kode organisasi dan mulai dari awal. Gunakan ini untuk mencoba aplikasi dari awal atau mengubah kode organisasi Anda.",
+    "resetConfirm": "Reset aplikasi? Kode organisasi akan dihapus dan kembali ke layar awal."
   },
   "nutrition": {
     "title": "Penilaian Gizi",

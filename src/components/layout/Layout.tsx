@@ -2,10 +2,12 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import NavBar from './NavBar'
 import { Sun, Moon, HelpCircle } from 'lucide-react'
 import { useDarkModeContext } from '../../context/DarkModeContext'
+import { useTranslation } from 'react-i18next'
 
 export default function Layout() {
   const { isDark, toggle } = useDarkModeContext()
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0f1f1a] flex flex-col">
@@ -14,7 +16,8 @@ export default function Layout() {
         <button
           onClick={() => navigate('/help')}
           className="p-2 rounded-full text-slate-400 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#1a2e28] hover:text-[#106C5A] dark:hover:text-green-400 transition-colors"
-          aria-label="Help"
+          aria-label={t('help.tooltip', 'Help')}
+          title={t('help.tooltip', 'Help')}
         >
           <HelpCircle size={18} />
         </button>

@@ -464,6 +464,10 @@
     "pageTitle": "Volunteer Guide",
     "pageSubtitle": "Everything you need to use GraceBridge effectively",
     "close": "Close",
-    "openGuide": "Open full guide"
+    "openGuide": "Open full guide",
+    "tooltip": "Help",
+    "resetApp": "Reset App",
+    "resetDesc": "Clear organization code and restart from the beginning. Use this to try the app fresh or change your organization code.",
+    "resetConfirm": "Reset the app? This will clear your organization code and return to the welcome screen."
   }
 }

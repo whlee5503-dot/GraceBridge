@@ -1,7 +1,7 @@
 // src/pages/HelpPage.tsx
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, Shield } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Shield, RotateCcw } from 'lucide-react'
 
 export default function HelpPage() {
   const { t } = useTranslation()
@@ -120,6 +120,32 @@ export default function HelpPage() {
             </div>
           </div>
 
+        </section>
+
+        {/* 앱 초기화 */}
+        <section>
+          <div className="rounded-2xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-4 py-4">
+            <div className="flex items-start gap-3 mb-3">
+              <RotateCcw size={18} className="text-red-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-bold text-red-700 dark:text-red-300">{t('help.resetApp')}</p>
+                <p className="text-xs text-red-500 dark:text-red-400 mt-0.5 leading-relaxed">{t('help.resetDesc')}</p>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                if (window.confirm(t('help.resetConfirm'))) {
+                  localStorage.clear()
+                  window.location.href = '/'
+                }
+              }}
+              className="w-full py-2.5 rounded-xl border border-red-300 dark:border-red-700 text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/30 transition-all flex items-center justify-center gap-2"
+            >
+              <RotateCcw size={14} />
+              {t('help.resetApp')}
+            </button>
+          </div>
         </section>
 
         {/* 버전 */}
