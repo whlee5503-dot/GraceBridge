@@ -341,6 +341,10 @@
       "conditions": "개 항목",
       "highRiskCondition": "고위험 질환 감지 — 즉시 의료기관 연결 권고",
       "newScreening": "새 스크리닝"
+    },
+    "draft": {
+      "found": "이전에 진행하던 스크리닝이 있습니다.",
+      "restore": "이어서 하기 →"
     }
   },
   "onboarding": {

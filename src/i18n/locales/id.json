@@ -110,6 +110,10 @@
       "conditions": "kondisi",
       "highRiskCondition": "Kondisi berisiko tinggi terdeteksi — rujukan sangat disarankan",
       "newScreening": "Skrining Baru"
+    },
+    "draft": {
+      "found": "Anda memiliki skrining yang belum selesai.",
+      "restore": "Lanjutkan →"
     }
   },
   "onboarding": {

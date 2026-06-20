@@ -339,6 +339,10 @@
       "conditions": "condition(s)",
       "highRiskCondition": "High-risk condition detected — referral strongly recommended",
       "newScreening": "New Screening"
+    },
+    "draft": {
+      "found": "You have an unfinished screening.",
+      "restore": "Continue →"
     }
   },
   "onboarding": {
