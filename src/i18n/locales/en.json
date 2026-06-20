@@ -342,7 +342,8 @@
     },
     "draft": {
       "found": "You have an unfinished screening.",
-      "restore": "Continue →"
+      "restore": "Continue →",
+      "restored": "Previous progress restored."
     }
   },
   "onboarding": {

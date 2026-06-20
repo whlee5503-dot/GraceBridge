@@ -113,7 +113,8 @@
     },
     "draft": {
       "found": "Anda memiliki skrining yang belum selesai.",
-      "restore": "Lanjutkan →"
+      "restore": "Lanjutkan →",
+      "restored": "Progres sebelumnya telah dipulihkan."
     }
   },
   "onboarding": {
