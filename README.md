@@ -91,7 +91,7 @@ All data is stored anonymously in Supabase with Row Level Security (RLS) — ins
 | Local DB | IndexedDB (offline queue) |
 | Server DB | Supabase (PostgreSQL + RLS) |
 | Referral Cache | Cloudflare KV |
-| i18n | i18next (en ✅ / ko ✅ / id 🔲 / fr 🔲 / sw 🔲) |
+| i18n | i18next (en ✅ / ko ✅ / id ⏸️ disabled pending clinical translation / fr 🔲 / sw 🔲) |
 | State | Zustand |
 | Mapping | Leaflet + OpenStreetMap |
 
@@ -186,6 +186,23 @@ GraceBridge uses a **pluggable referral database** — adding a new country requ
 2. Add i18n translations in `/src/i18n/locales/{lang}.json`
 
 > ⚠️ PHQ-9 and MNA-SF translations must use **clinically validated versions** — machine translation is not acceptable.
+
+---
+
+## Language & Localization Roadmap
+
+GraceBridge's i18n architecture supports adding any language without code changes — only a new locale JSON file is required. However, **clinical instruments (PHQ-9, MNA-SF) require clinically validated translations**, not machine translation, before a language can be safely enabled for end users.
+
+### Current State
+- **English (en)** — ✅ Complete, including clinical instruments
+- **Korean (ko)** — ✅ Complete, including clinical instruments
+- **Indonesian (id)** — UI strings translated, but the PHQ-9/MNA-SF questions are **not yet clinically validated**. The language selector is intentionally disabled in the current release until a validated translation is secured, so that no volunteer or screened individual is served an unverified clinical instrument.
+- **French (fr) / Kiswahili (sw)** — Structural placeholders only, no translation yet
+
+### How New Languages Are Added
+GraceBridge intends to grow its language coverage through **collaboration with domain experts** in each target region — for example, licensed clinicians, public health researchers, or organizations holding validated local-language versions of PHQ-9/MNA-SF. This is by design: a screening tool that misdiagnoses depression or malnutrition due to poor translation could cause real harm, so translation quality is treated as a clinical-safety requirement, not a UI task.
+
+Implementing organizations or translators interested in contributing a validated language pack are welcome to open an issue or pull request on this repository.
 
 ---
 

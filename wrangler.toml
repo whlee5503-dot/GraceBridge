@@ -1,11 +1,7 @@
 # wrangler.toml
-# Cloudflare Pages + Functions 설정
-
 name = "gracebridge"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "dist"
 
-# ── 환경변수 (로컬 개발용) ────────────────────────────────────────
-# 실제 값은 Cloudflare Pages 대시보드 Variables and secrets에 설정
 [vars]
 SUPABASE_URL = "https://nrmxjazdcyeeyfbrfvhp.supabase.co"

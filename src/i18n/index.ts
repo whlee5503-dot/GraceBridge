@@ -20,7 +20,11 @@ i18n
       id: { translation: id },
     },
     fallbackLng: 'en',
-    supportedLngs: ['en', 'ko', 'fr', 'sw', 'id'],
+    // 'id' (Indonesian) resource is kept loaded but excluded from
+    // supportedLngs so it cannot be auto-detected or selected until
+    // clinically validated PHQ-9/MNA-SF translations are in place.
+    // See README.md "Language & Localization Roadmap".
+    supportedLngs: ['en', 'ko', 'fr', 'sw'],
     interpolation: { escapeValue: false },
     detection: {
       order: ['localStorage', 'navigator'],

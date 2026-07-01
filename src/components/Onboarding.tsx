@@ -42,7 +42,8 @@ const SLIDES = [
 const LANGS = [
   { code: 'en', label: 'EN' },
   { code: 'ko', label: '한' },
-  { code: 'id', label: 'ID' },
+  // 'id' (Indonesian) temporarily disabled until clinically validated
+  // PHQ-9 / MNA-SF translations are secured post-DPGA (see README.md)
 ]
 
 export default function Onboarding({ onComplete }: OnboardingProps) {
