@@ -344,6 +344,8 @@
         "atRisk": "Dietary counseling recommended. Reassess in 1 month.",
         "malnourished": "Referral required. Connect to nutrition support services."
       },
+      "findFacility": "Find nearby facilities",
+      "mapLoading": "Loading map…",
       "risk": {
         "green": "Low",
         "yellow": "Mild",

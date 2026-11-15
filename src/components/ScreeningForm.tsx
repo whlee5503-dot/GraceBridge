@@ -4,8 +4,9 @@
 // Safety: PHQ-9 item 9 (self-harm thoughts) positive -> overall risk forced to red
 //         + safety card with volunteer guidance and crisis lines.
 //         The standard scoring in lib/scoring.ts is NOT modified.
+// Referral: result screen opens the full-screen ReferralMap (nearby facilities).
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   scorePHQ9, scoreMNASF, scoreChronicConditions, combinedRiskLevel,
@@ -19,6 +20,8 @@ import { enqueue } from '../lib/offlineQueue'
 import { getSessionId } from '../lib/privacy'
 import { getStoredChurchCode } from './ChurchAuth'
 import { getCrisisLines } from '../lib/crisisLines'
+
+const ReferralMap = lazy(() => import('./ReferralMap'))
 
 // ── 상수 ───────────────────────────────────────────────────────────
 const REGION_CODE = 'KR'
@@ -236,6 +239,7 @@ export default function ScreeningForm() {
   const [result, setResult] = useState<ScreeningResult | null>(null)
   const [restored, setRestored] = useState(false)
   const [hasDraft, setHasDraft] = useState(false)
+  const [showMap, setShowMap] = useState(false)
 
   // ── 단계가 바뀌면 화면 맨 위로 (결과 화면의 안전 카드가 바로 보이도록) ──
   useEffect(() => {
@@ -322,12 +326,32 @@ export default function ScreeningForm() {
     setResult(null)
     setRestored(false)
     setHasDraft(false)
+    setShowMap(false)
     clearDraft().catch(() => { })
     setStep('consent')
   }
 
   // ── PHQ-9 답변 진행률 (몇 문항 완료) ─────────────────────────
   const phq9Done = phq9Ans.filter(v => v >= 0).length
+
+  // ── 지도 전체 화면 (결과 화면에서 진입) ───────────────────────
+  if (showMap && result) {
+    return (
+      <div className="fixed inset-0 z-50 bg-white dark:bg-gray-900 flex flex-col">
+        <Suspense fallback={
+          <div className="flex-1 flex items-center justify-center text-sm text-gray-500">
+            {t('screening.result.mapLoading', 'Loading map…')}
+          </div>
+        }>
+          <ReferralMap
+            countryCode={REGION_CODE}
+            riskLevel={result.combined}
+            onClose={() => setShowMap(false)}
+          />
+        </Suspense>
+      </div>
+    )
+  }
 
   // ══════════════════════════════════════════════════════════════
   // 렌더
@@ -540,6 +564,7 @@ export default function ScreeningForm() {
         const lvDefault = PHQ9_LEVEL_DEFAULT[level]
         const nLevel = mnasfLevel(result.mnasf.score)
         const nDefault = MNASF_LEVEL_DEFAULT[nLevel]
+        const needsReferral = result.combined === 'red' || result.combined === 'orange'
 
         const summaryCards = [
           {
@@ -618,6 +643,21 @@ export default function ScreeningForm() {
                 </div>
               )
             })()}
+
+            {/* 근처 의료기관 찾기 — 주황/빨강이면 강조 */}
+            <button
+              type="button"
+              onClick={() => setShowMap(true)}
+              className={[
+                'w-full py-3 rounded-xl text-sm font-semibold',
+                needsReferral
+                  ? 'text-white'
+                  : 'border border-[#1a6b4a] text-[#1a6b4a] dark:text-green-400 dark:border-green-500',
+              ].join(' ')}
+              style={needsReferral ? { backgroundColor: 'var(--brand, #1a6b4a)' } : undefined}
+            >
+              {t('screening.result.findFacility', 'Find nearby facilities')}
+            </button>
 
             {/* 선별 검사 안내 (진단 아님) */}
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
