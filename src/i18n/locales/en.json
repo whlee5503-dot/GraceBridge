@@ -333,6 +333,41 @@
     "result": {
       "title": "Screening Results",
       "combined": "Overall Risk Level",
+      "disclaimer": "This is a screening, not a diagnosis. It does not replace assessment by a health professional.",
+      "risk": {
+        "green": "Low",
+        "yellow": "Mild",
+        "orange": "Moderate",
+        "red": "High"
+      },
+      "phq9Level": {
+        "minimal": "Minimal / None",
+        "mild": "Mild depression",
+        "moderate": "Moderate depression",
+        "moderatelySevere": "Moderately severe depression",
+        "severe": "Severe depression"
+      },
+      "phq9Action": {
+        "minimal": "No action required. Continue monitoring.",
+        "mild": "Watchful waiting. Re-screen at follow-up.",
+        "moderate": "Consider counseling referral and follow-up.",
+        "moderatelySevere": "Referral to a health facility is recommended.",
+        "severe": "Urgent referral required. Do not leave alone."
+      },
+      "phq9SafetyNote": "Because of the item 9 answer, follow the safety guidance above first. A low total score does not remove the need for follow-up.",
+      "safety": {
+        "title": "Item 9 answered: immediate check-in needed",
+        "body": "The respondent reported thoughts of death or self-harm (PHQ-9 item 9). This needs follow-up regardless of the total score.",
+        "step1": "Stay with the person. Do not leave them alone.",
+        "step2": "Ask directly and calmly whether they are thinking about hurting themselves. Listen without judging.",
+        "step3": "If there is immediate danger, call emergency services now (119 in Korea). Otherwise, connect them to the 109 crisis line together.",
+        "step4": "Help keep means of self-harm (medicines, sharp objects) out of reach, and arrange professional follow-up.",
+        "linesTitle": "Crisis lines",
+        "line109": "Suicide prevention hotline (24h)",
+        "line15770199": "Mental health crisis line (24h)",
+        "line119": "Emergency / ambulance",
+        "noLines": "Contact your local emergency number or nearest health facility."
+      },
       "phq9": "Depression (PHQ-9)",
       "mnasf": "Nutrition (MNA-SF)",
       "chronic": "Chronic Conditions",
