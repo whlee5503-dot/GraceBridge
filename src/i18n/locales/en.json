@@ -436,15 +436,24 @@
     "pending": "Pending"
   },
   "referral": {
+    "notConfigured": "This deployment has no country configured, so no facility data is shown. Contact your local emergency number or nearest health facility.",
+    "locationUnavailable": "Your location is unavailable, so distances cannot be shown. Facilities are listed without distance.",
+    "farWarning": "The nearest registered facility is about {{km}} km away. Call to confirm before travelling.",
+    "outOfCoverage": "No registered facility within {{limit}} km of your location (nearest: about {{km}} km). Contact your local emergency number or nearest health facility.",
+    "noCountryData": "No facility data is available for this country yet. Contact your local emergency number or nearest health facility.",
     "title": "Nearby Health Facilities",
     "myLocation": "My Location",
-    "locationFallback": "GPS unavailable — showing results near Seoul City Hall.",
     "retry": "Retry",
     "loading": "Finding nearby facilities...",
     "noFacilities": "No registered facilities found nearby.",
     "free": "Free",
     "distanceKm": "{{dist}} km away"
   },
+  "notConfigured": "This deployment has no country configured, so no facility data is shown. Contact your local emergency number or nearest health facility.",
+  "locationUnavailable": "Your location is unavailable, so distances cannot be shown. Facilities are listed without distance.",
+  "farWarning": "The nearest registered facility is about {{km}} km away. Call to confirm before travelling.",
+  "outOfCoverage": "No registered facility within {{limit}} km of your location (nearest: about {{km}} km). Contact your local emergency number or nearest health facility.",
+  "noCountryData": "No facility data is available for this country yet. Contact your local emergency number or nearest health facility.",
   "results": {
     "combinedRisk": "Overall Risk Level",
     "phq9Title": "Depression Screening (PHQ-9)",

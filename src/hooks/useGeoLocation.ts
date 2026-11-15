@@ -1,5 +1,8 @@
 // src/hooks/useGeoLocation.ts
-// Phase 3 — GPS 좌표 훅 (권한 거부 시 서울 시청 기본값 fallback)
+// Phase 3 — GPS 좌표 훅
+// 위치를 얻지 못하면 location=null 과 error 코드를 돌려준다.
+// (이전 버전의 "서울 시청 기본값 fallback"은 다른 지역 사용자에게 잘못된 기관을
+//  안내할 수 있어 제거했다.)
 
 import { useState, useEffect } from 'react'
 
@@ -16,23 +19,17 @@ interface UseGeoLocationResult {
   retry: () => void
 }
 
-// 서울 시청 기본값 (GPS 권한 거부 시 fallback)
-const FALLBACK_LOCATION: GeoLocation = {
-  lat: 37.5665,
-  lng: 126.9780,
-  accuracy: null,
-}
-
 export function useGeoLocation(): UseGeoLocationResult {
   const [location, setLocation] = useState<GeoLocation | null>(null)
-  const [loading, setLoading]   = useState(false)
-  const [error, setError]       = useState<string | null>(null)
-  const [trigger, setTrigger]   = useState(0)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [trigger, setTrigger] = useState(0)
 
   useEffect(() => {
     if (!navigator.geolocation) {
       setError('geolocation_not_supported')
-      setLocation(FALLBACK_LOCATION)
+      setLocation(null)
+      setLoading(false)
       return
     }
 
@@ -41,7 +38,7 @@ export function useGeoLocation(): UseGeoLocationResult {
 
     const timeoutId = setTimeout(() => {
       setError('geolocation_timeout')
-      setLocation(FALLBACK_LOCATION)
+      setLocation(null)
       setLoading(false)
     }, 10000)
 
@@ -49,17 +46,16 @@ export function useGeoLocation(): UseGeoLocationResult {
       (pos) => {
         clearTimeout(timeoutId)
         setLocation({
-          lat:      pos.coords.latitude,
-          lng:      pos.coords.longitude,
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
           accuracy: pos.coords.accuracy,
         })
         setLoading(false)
       },
       (err) => {
         clearTimeout(timeoutId)
-        // 권한 거부 등 에러 시 서울 시청 fallback
         setError(err.code === 1 ? 'geolocation_denied' : 'geolocation_error')
-        setLocation(FALLBACK_LOCATION)
+        setLocation(null)
         setLoading(false)
       },
       { enableHighAccuracy: true, timeout: 9000, maximumAge: 60000 }
