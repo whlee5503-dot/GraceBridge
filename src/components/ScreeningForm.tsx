@@ -63,6 +63,19 @@ const PHQ9_LEVEL_DEFAULT: Record<PHQ9Level, { label: string; action: string }> =
   severe: { label: 'Severe depression', action: 'Urgent referral required. Do not leave alone.' },
 }
 
+// ── MNA-SF 점수 구간 -> i18n 키 (구간은 scoring.ts와 동일: >=12, >=8, 그 미만) ──
+type MNASFLevel = 'normal' | 'atRisk' | 'malnourished'
+function mnasfLevel(score: number): MNASFLevel {
+  if (score >= 12) return 'normal'
+  if (score >= 8) return 'atRisk'
+  return 'malnourished'
+}
+const MNASF_LEVEL_DEFAULT: Record<MNASFLevel, { label: string; action: string }> = {
+  normal: { label: 'Normal Nutritional Status', action: 'No intervention required. Continue routine monitoring.' },
+  atRisk: { label: 'At Risk of Malnutrition', action: 'Dietary counseling recommended. Reassess in 1 month.' },
+  malnourished: { label: 'Malnourished', action: 'Referral required. Connect to nutrition support services.' },
+}
+
 // ── PHQ-9 문항 키 ─────────────────────────────────────────────────
 const PHQ9_KEYS = [
   'screening.phq9.q1', 'screening.phq9.q2', 'screening.phq9.q3',
@@ -525,6 +538,8 @@ export default function ScreeningForm() {
         const st = RISK_STYLE[result.combined]
         const level = phq9Level(result.phq9.score)
         const lvDefault = PHQ9_LEVEL_DEFAULT[level]
+        const nLevel = mnasfLevel(result.mnasf.score)
+        const nDefault = MNASF_LEVEL_DEFAULT[nLevel]
 
         const summaryCards = [
           {
@@ -541,8 +556,8 @@ export default function ScreeningForm() {
             label: t('screening.result.mnasf', 'Nutrition (MNA-SF)'),
             res: result.mnasf,
             max: 14,
-            title: result.mnasf.label,
-            action: result.mnasf.action,
+            title: t(`screening.result.mnasfLevel.${nLevel}`, nDefault.label),
+            action: t(`screening.result.mnasfAction.${nLevel}`, nDefault.action),
           },
         ]
 

@@ -334,6 +334,16 @@
       "title": "Screening Results",
       "combined": "Overall Risk Level",
       "disclaimer": "This is a screening, not a diagnosis. It does not replace assessment by a health professional.",
+      "mnasfLevel": {
+        "normal": "Normal Nutritional Status",
+        "atRisk": "At Risk of Malnutrition",
+        "malnourished": "Malnourished"
+      },
+      "mnasfAction": {
+        "normal": "No intervention required. Continue routine monitoring.",
+        "atRisk": "Dietary counseling recommended. Reassess in 1 month.",
+        "malnourished": "Referral required. Connect to nutrition support services."
+      },
       "risk": {
         "green": "Low",
         "yellow": "Mild",

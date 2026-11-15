@@ -336,6 +336,16 @@
       "title": "스크리닝 결과",
       "combined": "종합 위험도",
       "disclaimer": "이 결과는 선별 검사이며 진단이 아닙니다. 의료 전문가의 평가를 대신할 수 없습니다.",
+      "mnasfLevel": {
+        "normal": "정상 영양 상태",
+        "atRisk": "영양불량 위험",
+        "malnourished": "영양불량"
+      },
+      "mnasfAction": {
+        "normal": "개입이 필요하지 않습니다. 정기적으로 지켜봐 주세요.",
+        "atRisk": "영양 상담을 권고합니다. 1개월 후 다시 평가해 주세요.",
+        "malnourished": "의뢰가 필요합니다. 영양 지원 서비스에 연결해 주세요."
+      },
       "risk": {
         "green": "낮음",
         "yellow": "경미",
