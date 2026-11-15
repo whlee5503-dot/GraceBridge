@@ -5,6 +5,8 @@
 //         + safety card with volunteer guidance and crisis lines.
 //         The standard scoring in lib/scoring.ts is NOT modified.
 // Referral: result screen opens the full-screen ReferralMap (nearby facilities).
+// Country: crisis lines / facilities come from the deployment country (VITE_COUNTRY_CODE).
+//          If it is not set, or has no data, NO other country's numbers are shown.
 
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -20,11 +22,23 @@ import { enqueue } from '../lib/offlineQueue'
 import { getSessionId } from '../lib/privacy'
 import { getStoredChurchCode } from './ChurchAuth'
 import { getCrisisLines } from '../lib/crisisLines'
+import { COUNTRY_CODE } from '../lib/appConfig'
 
 const ReferralMap = lazy(() => import('./ReferralMap'))
 
 // ── 상수 ───────────────────────────────────────────────────────────
-const REGION_CODE = 'KR'
+// Region code stored with each anonymous result.
+const REGION_CODE = COUNTRY_CODE || 'unknown'
+
+// Human-readable country name in the current UI language (falls back to the code).
+function countryName(code: string, lang: string): string {
+  try {
+    const DN = (Intl as any).DisplayNames
+    return new DN([lang], { type: 'region' }).of(code) ?? code
+  } catch {
+    return code
+  }
+}
 
 // ── 타입 ───────────────────────────────────────────────────────────
 type Step = 'consent' | 'phq9' | 'mnasf' | 'chronic' | 'result'
@@ -169,8 +183,9 @@ function OptionBtn({ selected, onClick, children }: {
 
 // ── 안전 카드 (PHQ-9 9번 문항 양성) ───────────────────────────────
 function SafetyCard() {
-  const { t } = useTranslation()
-  const lines = getCrisisLines(REGION_CODE)
+  const { t, i18n } = useTranslation()
+  // Only the deployment country's numbers; null when not configured or no data.
+  const lines = COUNTRY_CODE ? getCrisisLines(COUNTRY_CODE) : null
 
   function dial(number: string) {
     window.location.href = 'tel:' + number.replace(/-/g, '')
@@ -200,17 +215,26 @@ function SafetyCard() {
         <p className="text-xs font-semibold uppercase tracking-wide text-red-800 dark:text-red-300">
           {t('screening.result.safety.linesTitle', 'Crisis lines')}
         </p>
-        {lines ? lines.map(l => (
-          <button
-            key={l.number}
-            type="button"
-            onClick={() => dial(l.number)}
-            className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border border-red-300 text-left"
-          >
-            <span className="text-sm text-gray-800 dark:text-gray-200">{t(l.labelKey, l.defaultLabel)}</span>
-            <span className="text-base font-bold text-red-700 dark:text-red-300">{l.number}</span>
-          </button>
-        )) : (
+        {lines ? (
+          <>
+            {lines.map(l => (
+              <button
+                key={l.number}
+                type="button"
+                onClick={() => dial(l.number)}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border border-red-300 text-left"
+              >
+                <span className="text-sm text-gray-800 dark:text-gray-200">{t(l.labelKey, l.defaultLabel)}</span>
+                <span className="text-base font-bold text-red-700 dark:text-red-300">{l.number}</span>
+              </button>
+            ))}
+            <p className="text-xs text-red-900 dark:text-red-200 leading-relaxed">
+              {t('screening.result.safety.countryNote', 'These numbers apply to {{country}} only. Elsewhere, contact your local emergency services.', {
+                country: countryName(COUNTRY_CODE, i18n.language),
+              })}
+            </p>
+          </>
+        ) : (
           <p className="text-sm text-red-900 dark:text-red-200">
             {t('screening.result.safety.noLines', 'Contact your local emergency number or nearest health facility.')}
           </p>
@@ -230,7 +254,7 @@ const DEFAULT_CHRONIC: ChronicConditions = {
 // 메인 컴포넌트
 // ══════════════════════════════════════════════════════════════════
 export default function ScreeningForm() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const [step, setStep] = useState<Step>('consent')
   const [phq9Ans, setPhq9Ans] = useState<number[]>(Array(9).fill(-1))
@@ -344,7 +368,7 @@ export default function ScreeningForm() {
           </div>
         }>
           <ReferralMap
-            countryCode={REGION_CODE}
+            countryCode={COUNTRY_CODE}
             riskLevel={result.combined}
             onClose={() => setShowMap(false)}
           />
@@ -399,6 +423,16 @@ export default function ScreeningForm() {
             <p>✅ {t('screening.consent.point2', 'Results stay on this device until synced')}</p>
             <p>✅ {t('screening.consent.point3', 'Volunteer use only — not a medical diagnosis')}</p>
           </div>
+
+          {/* 배포 국가 안내 */}
+          <div className="rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 px-4 py-3 text-xs text-blue-900 dark:text-blue-200 leading-relaxed">
+            {COUNTRY_CODE
+              ? t('screening.consent.deploymentNote', 'This is a demonstration deployment configured for {{country}}. Emergency numbers and facility information apply to {{country}} only.', {
+                country: countryName(COUNTRY_CODE, i18n.language),
+              })
+              : t('screening.consent.deploymentNoteUnset', 'No country is configured for this deployment, so emergency numbers and facility information are not shown.')}
+          </div>
+
           <button
             type="button"
             onClick={() => setStep('phq9')}

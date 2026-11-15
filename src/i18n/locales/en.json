@@ -266,6 +266,8 @@
     "step": "Step",
     "calculate": "Calculate Results",
     "consent": {
+      "deploymentNote": "This is a demonstration deployment configured for {{country}}. Emergency numbers and facility information apply to {{country}} only.",
+      "deploymentNoteUnset": "No country is configured for this deployment, so emergency numbers and facility information are not shown.",
       "title": "Health Screening",
       "body": "This screening uses validated clinical tools (PHQ-9, MNA-SF) to identify health risks. No personal information is collected.",
       "point1": "Anonymous — no name, age, or contact stored",
@@ -368,11 +370,12 @@
       },
       "phq9SafetyNote": "Because of the item 9 answer, follow the safety guidance above first. A low total score does not remove the need for follow-up.",
       "safety": {
+        "countryNote": "These numbers apply to {{country}} only. Elsewhere, contact your local emergency services.",
         "title": "Item 9 answered: immediate check-in needed",
         "body": "The respondent reported thoughts of death or self-harm (PHQ-9 item 9). This needs follow-up regardless of the total score.",
         "step1": "Stay with the person. Do not leave them alone.",
         "step2": "Ask directly and calmly whether they are thinking about hurting themselves. Listen without judging.",
-        "step3": "If there is immediate danger, call emergency services now (119 in Korea). Otherwise, connect them to the 109 crisis line together.",
+        "step3": "If there is immediate danger, call emergency services now. Otherwise, connect them to a crisis line together.",
         "step4": "Help keep means of self-harm (medicines, sharp objects) out of reach, and arrange professional follow-up.",
         "linesTitle": "Crisis lines",
         "line109": "Suicide prevention hotline (24h)",
